@@ -114,7 +114,7 @@ export default function ValueProposition() {
             </div>
             <blockquote className="relative">
               <p className="text-white text-xl italic mb-4">
-                "We are seeing unprecedented engagement levels. We are projecting 30% increase in environmental impact after this conference."
+                We are seeing unprecedented engagement levels. We are projecting 30% increase in environmental impact after this conference.
               </p>
               <footer className="text-blue-400 font-semibold">
                 GREEN INITIATIVES
@@ -126,4 +126,4 @@ export default function ValueProposition() {
     </section>
   )
 }
-
+p
