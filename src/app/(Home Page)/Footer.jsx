@@ -15,7 +15,7 @@ const footerSections = [
   {
     title: "Call for Papers",
     links: [
-      { name: "Themes and Topics", href: "/themes" },
+      { name: "Themes and Topics", href: "/theme-and-topics" },
       { name: "Submission Guidelines", href: "/submission-guidelines" },
       { name: "Presentation Formats", href: "/presentation-formats" },
     ],
@@ -33,7 +33,7 @@ const footerSections = [
   {
     title: "Legal",
     links: [
-      { name: "Terms & Conditions", href: "/terms" },
+      { name: "Terms & Conditions", href: "/terms-&-condition" },
       { name: "Cancellation Policy", href: "/cancellation-policy" },
       { name: "Privacy Policy", href: "/privacy-policy" },
     ],

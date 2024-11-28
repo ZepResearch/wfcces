@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from '@/components/ui/badge'
 import { Calendar, FileText, UserPlus, BirdIcon, File } from "lucide-react"
+import Link from 'next/link'
 
 export default function ThemeAndTopics() {
   const controls = useAnimation()
@@ -37,28 +38,7 @@ export default function ThemeAndTopics() {
   }
 
   const topics = [
-    "Air Transportation Management", "Applied Financial Accounting", "Applied Macroeconomics",
-    "Applied Microeconomics", "Archaeological Sites Management", "Aviation Management",
-    "Big Data and Business Intelligence", "Business English", "Business Ethics",
-    "Business Law", "Business Operations", "City Tourism",
-    "Congress Management", "Contemporary Nutrition", "Corporate Social Responsibility",
-    "Cost Accounting", "Crisis Management and Tourism", "Customer Experience Management",
-    "Destination Management", "Digitalization and Tourism", "Economic Sustainability",
-    "Ecotourism", "Entrepreneurship and SMEs", "E-Tourism",
-    "Event Management", "Tourism and Financial Management", "Food and Beverage Management",
-    "Food Production and Service", "Foreign Language", "Global Business Environment",
-    "Health and Wellbeing Tourism", "Heritage Tourism", "Hospitality and Tourism Fundamentals",
-    "Hospitality Project Planning", "Hotel Business Operations", "Human Resource Management",
-    "ICT And Tourism", "Information Systems and Technology", "Intangible Cultural Heritage Management",
-    "International Management", "Lodging Operations", "Management Accounting",
-    "Marine and Coastal Areas Tourism", "Market Research", "Mathematics and Tourism Management",
-    "Medical Tourism", "MICE", "Operations Management",
-    "Restaurant and Event Management", "Rural Tourism", "Social Media Marketing",
-    "Sport Tourism", "Statistics", "Strategic Management",
-    "Sustainable Tourism Development", "Tour Operations", "Tourism Development",
-    "Tourism Geography", "Tourism Law", "Tourism Marketing",
-    "Tourism Mobilities", "Urban and Regional Tourism Planning", "Wildlife and Adventure Tourism",
-    "World Heritage Management"
+   "Climate Change and Global Warming","Adaptation and Mitigation Strategies","Climate Risk Assessment and Management","Carbon Sequestration and Emission Reduction","Renewable Energy Innovations (Solar, Wind, Hydropower, etc.)","Green Technology and Smart Cities","Water Scarcity and Conservation Techniques","Sustainable Agriculture and Food Security","Biodiversity and Ecosystem Conservation","Marine and Coastal Sustainability","Air Quality and Pollution Control","Circular Economy and Waste Management","Environmental Policy and Governance","Role of AI and Big Data in Environmental Monitoring","Impact of Climate Change on Public Health","Sustainable Development Goals (SDGs) and Climate Action","Environmental Justice and Ethics","Education and Awareness for Sustainability","Social and Economic Impacts of Environmental Degradation"
   ]
 
   return (
@@ -74,7 +54,7 @@ export default function ThemeAndTopics() {
           <Badge variant="outline" className="mb-4 text-lg px-4 py-1">Conference Themes</Badge>
           <h2 className="text-4xl font-bold text-primary mb-4">Theme and Topics</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore the diverse range of topics covered in our conference on Tourism Management and Hospitality.
+          Exploring innovative solutions, research, and strategies to combat climate change and promote sustainability.
           </p>
         </motion.div>
 
@@ -85,8 +65,9 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-muted-foreground">
-                The 5th International Conference on Tourism Management and Hospitality on 22 – 24 November 2024 in London, UK encourages all to present their recent research work. This conference is considered a prestigious event organized with the motivation to provide an excellent international platform for academics, researchers, managers, industrial participants, and students to share their research findings with global experts. All abstract submissions will be peer-reviewed and evaluated based on originality, technical and/or research depth, accuracy, and relevance with the theme of the conference.
-              </p>
+              The World Forum on Climate Change and Environmental Sustainability on March 10–12, 2025, in Geneva, Switzerland, invites researchers, policymakers, innovators, and activists to present their recent work. This forum is a prestigious event designed to provide an excellent international platform for sharing groundbreaking research, innovative solutions, and actionable strategies to combat climate change and foster environmental sustainability.
+                        </p>
+              <p className="leading-relaxed text-lg text-muted-foreground">All abstract submissions will undergo rigorous peer review to ensure originality, technical merit, and relevance to the conference themes    </p>
             </CardContent>
           </Card>
         </motion.div>
@@ -98,8 +79,7 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="mb-6 text-lg text-black">
-                The conference is seeking submissions related to the following conference topics: Tourism Management and Hospitality. Other related tracks and topics will also be considered.
-              </p>
+              The forum encourages submissions on the following topics related to climate change and environmental sustainability. Other relevant areas will also be considered              </p>
               <motion.div 
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
                 variants={{
@@ -125,26 +105,30 @@ export default function ThemeAndTopics() {
 
         <motion.div variants={itemVariants} className="mt-12">
           <Card className="overflow-hidden shadow-2xl bg-white/50 backdrop-blur-sm border-2 border-primary/20">
-            <CardHeader className="bg-muted text-primary p-6">
+            <CardHeader className="bg-muted text-blue-500 p-6 border-b-2 border-blue-400 rounded-md">
               <CardTitle className="text-3xl">Submission Guidelines</CardTitle>
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-muted-foreground">
-                Submitted abstracts will be evaluated by the Scientific Committee. All submissions should report original and previously unpublished research results no matter the type of research paper you are presenting. Manuscripts should meet the format set by the Conference committee and are subject to review. Detailed instructions and full paper submission guidelines will be emailed within a few weeks following the conference.
+              Submitted abstracts will be reviewed by the Scientific Committee to ensure they align with the conference objectives and themes. Submissions should report original and previously unpublished research findings. Manuscripts must adhere to the conference's format and guidelines, which will be shared with accepted participants.
               </p>
             </CardContent>
           </Card>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-6 mt-12">
+        <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-6 mt-12 justify-center items-center mx-auto">
+          <Link href={'/submission'}>
           <Button className="flex-1 text-xl py-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" variant="default">
             <FileText className="mr-2 h-6 w-6" />
             Submit Your Paper
           </Button>
+         </Link>
+         <Link href={'/registration'}>
           <Button className="flex-1 text-xl py-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" variant="secondary">
             <UserPlus className="mr-2 h-6 w-6" />
             Register for the Conference
           </Button>
+          </Link>
         </motion.div>
 
         <motion.div variants={itemVariants} className="mt-12">

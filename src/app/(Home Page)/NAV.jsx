@@ -102,7 +102,7 @@ const MobileNav = () => (
       </SheetHeader>
       <nav className="mt-6">
         <Accordion type="single" collapsible className="w-full">
-          <MobileNavItem href="/">HOME</MobileNavItem>
+          {/* <MobileNavItem href="/">HOME</MobileNavItem> */}
           <MobileNavItem
             href="/about"
             subItems={[
@@ -120,6 +120,9 @@ const MobileNav = () => (
               { href: "/theme-and-topics", title: "Themes and Topics" },
               { href: "/papers-format", title: "Paper Formats" },
               { href: "/mode-of-presentation", title: "Mode of Presentation" },
+            
+            
+              // { href: "/awards", title: "Awards" },  
               // { href: "/schedule", title: "Conference Schedule" },
             ]}
             icon={FileText}
@@ -138,6 +141,11 @@ const MobileNav = () => (
           <MobileNavItem href="/contact">CONTACT</MobileNavItem>
         </Accordion>
         <div className="mt-6">
+        <SheetClose asChild>
+          <Button asChild variant='outline' className="w-full mb-2 border-blue-400 text-blue-400">
+              <Link href="/exhibit-and-sponsor">Exhibit & Sponsor</Link>
+            </Button>
+            </SheetClose>
           <SheetClose asChild>
             <Button asChild className="w-full">
               <Link href="/registration">REGISTER NOW</Link>
@@ -167,11 +175,11 @@ export default function Navbar() {
           <NavigationMenu>
             <NavigationMenuList>
               <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
+                {/* <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     HOME
                   </NavigationMenuLink>
-                </Link>
+                </Link> */}
               </NavigationMenuItem>
               <NavigationMenuItem>
                 <NavigationMenuTrigger>
@@ -202,6 +210,7 @@ export default function Navbar() {
                     >
                       Discover the organizations behind this important event.
                     </ListItem>
+                    
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -225,7 +234,7 @@ export default function Navbar() {
                       title="Paper Formats"
                       className="hover:bg-slate-50 hover:drop-shadow-md"
                     >
-                      Meet our distinguished speakers and climate experts.
+                      Check out Formats and guidlines for Paper publication
                     </ListItem>
                     <ListItem
                       href="/mode-of-presentation"
@@ -234,6 +243,13 @@ export default function Navbar() {
                     >
                       View the full program of events and sessions.
                     </ListItem>
+                    {/* <ListItem
+                      href="/awards"
+                      title="Award"
+                      className="hover:bg-slate-50 hover:drop-shadow-md"
+                    >
+                      View the full programs Awards distributions and nominies .
+                    </ListItem> */}
                     {/* <ListItem
                       href="/schedule"
                       title="Conference Schedule"
@@ -270,6 +286,9 @@ export default function Navbar() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
+          <Button asChild variant='outline' className="w-full  border-blue-400 text-blue-400 font-medium">
+              <Link href="/exhibit-and-sponsor">Exhibit & Sponsor</Link>
+            </Button>
           <Button asChild className="bg-blue-500 hover:bg-blue-600">
             <Link href="/registration">REGISTER NOW</Link>
           </Button>
