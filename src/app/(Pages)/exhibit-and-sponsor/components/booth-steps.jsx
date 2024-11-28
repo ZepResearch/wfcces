@@ -46,7 +46,7 @@ export default function BoothSteps() {
             * Does not apply to Self Build Custom A-D build options *
           </p>
           <p className="text-xl text-blue-100 mt-8">
-            Exhibiting couldn't be easier. It only takes three steps:
+            Exhibiting couldn&apos;t be easier. It only takes three steps:
           </p>
         </motion.div>
 

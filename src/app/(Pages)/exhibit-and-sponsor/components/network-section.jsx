@@ -61,7 +61,7 @@ export default function NetworkSection() {
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-white mb-2">Environmental Leaders and Industry Experts</h3>
-                <p className="text-blue-100">Where the world's leading climate scientists and sustainability experts network to drive environmental change.</p>
+                <p className="text-blue-100">Where the world&apos;s leading climate scientists and sustainability experts network to drive environmental change.</p>
               </div>
             </div>
 

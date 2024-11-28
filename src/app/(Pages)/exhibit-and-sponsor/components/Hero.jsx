@@ -46,7 +46,7 @@ export default function ExhibitionHero() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <span>Network with the world's largest climate change forum – we focus on sustainable solutions</span>
+              <span>Network with the world&apos;s largest climate change forum – we focus on sustainable solutions</span>
             </li>
             <li className="flex items-start gap-3">
               <div className="mt-1 min-w-[24px]">

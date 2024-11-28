@@ -107,7 +107,7 @@ export default function ContactUs() {
                 Get in Touch
               </h2>
               <p className="text-muted-foreground mb-4">
-              Reach out to us for inquiries, assistance, or more information about the World Forum on Climate Change and Environmental Sustainability. We're here to support you every step of the way.
+              Reach out to us for inquiries, assistance, or more information about the World Forum on Climate Change and Environmental Sustainability. We&apos;re here to support you every step of the way.
               </p>
               <div className="space-y-2">
                 <div className="flex items-center">
