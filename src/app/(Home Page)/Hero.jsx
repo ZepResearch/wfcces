@@ -13,6 +13,10 @@ export default function Component() {
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="relative mb-8">
+        <Image src={'https://res.cloudinary.com/dwlhesiyi/image/upload/v1729260387/erph7fml9unxiowlmrmg.png'}alt="zep logo  "
+          width={400}
+          height={400}
+          />
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -42,7 +46,10 @@ export default function Component() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="relative mb-12"
-        >
+        ><div>
+         
+          
+        </div>
           <div className="overflow-hidden rounded-3xl">
             <Image
               src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1731911779/tdeykvmx5cg106az0vvy.avif"
