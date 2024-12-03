@@ -60,7 +60,7 @@ export function CoOrganizationLogosClient({ logos }) {
               alt={logo.name}
               layout="fill"
               objectFit="contain"
-              className="p-4 grayscale hover:grayscale-0 transition-all duration-200  select-none"
+              className="p-4   transition-all duration-200  select-none"
             />
           </div>
         </motion.div>

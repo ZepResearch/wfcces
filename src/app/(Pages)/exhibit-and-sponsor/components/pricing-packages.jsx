@@ -43,10 +43,10 @@ export default function PricingPackages() {
           variants={container}
           initial="hidden"
           animate="show"
-          className="grid md:grid-cols-2 gap-8"
+          className="grid md:grid-cols-1  justify-items-center gap-8"
         >
           {/* Exhibitor Card */}
-          <motion.div variants={item}>
+          {/* <motion.div variants={item}>
             <Card className="bg-purple-500 text-white overflow-hidden">
               <CardHeader className="text-center pb-4">
                 <div className="text-lg font-semibold mb-2">EXHIBITOR</div>
@@ -107,7 +107,7 @@ export default function PricingPackages() {
                     </Link>
               </CardFooter>
             </Card>
-          </motion.div>
+          </motion.div> */}
 
           {/* Sponsor Card */}
           <motion.div variants={item}>

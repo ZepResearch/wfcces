@@ -15,6 +15,7 @@ import {
 import Image from "next/image";
 import DotPattern from "@/components/ui/dot-pattern";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 export default function ConferenceCTASections() {
   const [ref, inView] = useInView({
@@ -94,12 +95,14 @@ export default function ConferenceCTASections() {
                 Join leaders, innovators, and changemakers at the forefront of
                 climate action and sustainability.
               </p>
+              <Link href={'/registration'}>
               <Button
                 size="lg"
                 className="bg-white text-blue-600 hover:bg-blue-50 mt-4"
-              >
+                >
                 Register Now <UserPlus className="ml-2 h-5 w-5" />
               </Button>
+                </Link>
             </motion.div>
             <motion.div variants={itemVariants}>
               <Image

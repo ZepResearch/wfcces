@@ -13,6 +13,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Component() {
   const [isHovered, setIsHovered] = useState(false);
@@ -49,21 +50,25 @@ export default function Component() {
                   renewable energy and featuring cutting-edge blue architecture
                 </p>
                 <div className="p-0  flex flex-col sm:flex-row gap-4">
+                  <Link href={'/venue'}>
                   <Button
                     size="lg"
                     className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 font-bold"
                     onMouseEnter={() => setIsHovered(true)}
                     onMouseLeave={() => setIsHovered(false)}
-                  >
+                    >
                     Explore Venue
                   </Button>
+                    </Link>
+                    <Link href={'/registration'}>
                   <Button
                     variant="outline"
                     size="lg"
                     className="w-full sm:w-auto border-blue-600 text-blue-600 hover:bg-blue-50"
-                  >
+                    >
                     Register Now
                   </Button>
+                    </Link>
                 </div>
               </CardContent>
             </div>

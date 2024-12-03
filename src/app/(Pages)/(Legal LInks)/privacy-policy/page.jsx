@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Mail, MapPin, Phone } from "lucide-react"
 
 export default function PrivacyPolicyPage() {
   return (
@@ -80,9 +81,22 @@ export default function PrivacyPolicyPage() {
             <p className="text-gray-700">
               For questions about our Privacy Policy, contact us at:
             </p>
-            <p className="text-gray-700 font-semibold mt-2">
-              [Insert Contact Details]
-            </p>
+            <div className="text-gray-700 font-medium mt-2">
+            <div className="space-y-2">
+                <div className="flex items-center">
+                  <Mail className="mr-2 text-primary" />
+                  <span>info@wfcces.com</span>
+                </div>
+                <div className="flex items-center">
+                  <Phone className="mr-2 text-primary" />
+                  <span>+91 7358737843</span>
+                </div>
+                <div className="flex items-center">
+                  <MapPin className="mr-2 text-primary" />
+                  <span>DCB-330, 3rd Floor, DLF Cyber City, Patia, Bhubaneswar, ODISHA - 751024 India</span>
+                </div>
+              </div>
+            </div>
           </div>
         </CardContent>
       </Card>

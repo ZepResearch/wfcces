@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Youtube } from "lucide-react";
 
 const footerSections = [
   {
@@ -41,10 +41,12 @@ const footerSections = [
 ];
 
 const socialLinks = [
-  { name: "Facebook", href: "#", icon: Facebook },
-  { name: "Twitter", href: "#", icon: Twitter },
-  { name: "LinkedIn", href: "#", icon: Linkedin },
-  { name: "Instagram", href: "#", icon: Instagram },
+  { name: "Facebook", href: "https://www.facebook.com/profile.php?id=61561809783777", icon: Facebook },
+  { name: "Twitter", href: "https://x.com/Zepresearch", icon: Twitter },
+  { name: "LinkedIn", href: "https://www.linkedin.com/company/zep-research/", icon: Linkedin },
+  { name: "Instagram", href: "https://www.instagram.com/zepresearch/", icon: Instagram },
+  { name: "Youtube", href: "https://youtube.com/@zepresearch", icon: Youtube },
+
 ];
 
 export default function Footer() {
