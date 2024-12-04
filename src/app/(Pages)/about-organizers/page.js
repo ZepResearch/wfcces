@@ -68,8 +68,8 @@ export default function AboutCompany() {
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground px-12">
-                Our conference aims to foster innovation, share best practices, and explore the latest trends in tourism and hospitality management.
-              </p>
+              At Zep Research, we specialize in organizing and hosting academic conferences and webinars that bring together researchers, educators, and professionals from around the globe. Our expertly curated events foster meaningful exchanges of ideas, knowledge sharing, and collaborations, creating opportunities for both seasoned scholars and emerging researchers to connect and grow.
+            </p>
             </CardContent>
           </Card>
         </motion.div>

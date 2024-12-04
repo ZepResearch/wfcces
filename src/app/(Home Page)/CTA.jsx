@@ -59,6 +59,7 @@ export default function ConferenceCTASections() {
       icon: <MapPin className="w-10 h-10 mb-4 text-blue-500" />,
       link: "/venue",
     },
+
     {
       title: "Sponsorship",
       description:
@@ -161,13 +162,14 @@ export default function ConferenceCTASections() {
                       {card.description}
                     </p>
                     <Button
-                      asChild
                       size="sm"
-                      className="mt-auto bg-blue-400 hover:bg-blue-500/90 text-white"
-                    >
-                      <a href={card.link}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                      </a>
+                      className="mt-auto bg-blue-400 hover:bg-blue-500/90 text-white inline-flex"
+                    
+                      
+                      >
+                  <Link href={card.link}>
+                        Learn More 
+                  </Link><ArrowRight className="ml-2 h-4 w-4" /> 
                     </Button>
                   </CardContent>
                 </Card>

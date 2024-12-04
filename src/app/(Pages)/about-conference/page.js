@@ -24,15 +24,16 @@ export default function AboutUs() {
           >
             <Card>
               <CardHeader>
-                <CardTitle>Our Mission</CardTitle>
-                <CardDescription>Driving global action for a sustainable future</CardDescription>
+                <CardTitle>About Wfcces</CardTitle>
+                <CardDescription>Shaping a Sustainable Future Together</CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-gray-600 mb-4">
-                  The World Forum on Climate Change and Environmental Sustainability brings together leaders, scientists, activists, and innovators from around the globe to address the most pressing environmental challenges of our time.
+                Welcome to the World Forum on Climate Change and Environmental Sustainability (WFCCES). We are a global platform dedicated to bringing together leaders, scientists, activists, innovators, and change-makers to address the urgent environmental challenges facing our world. At WFCCES, we believe that collective action and shared knowledge are key to creating a sustainable future for all.
                 </p>
                 <p className="text-gray-600">
-                  Our goal is to foster collaboration, share cutting-edge research, and develop actionable strategies to combat climate change and promote sustainable practices across all sectors of society.
+                Our mission is to inspire collaboration, share innovative research, and develop practical strategies to combat climate change and promote sustainability. Whether through discussions, workshops, or shared insights, we aim to empower individuals and organizations to take meaningful steps toward protecting our planet. WFCCES is a space where ideas turn into action. Together, we can create a healthier, more sustainable world for future generations.
+
                 </p>
               </CardContent>
             </Card>
@@ -58,9 +59,9 @@ export default function AboutUs() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12"
+          className="mt-12 flex flex-row justify-start gap-14 "
         >
-          <Card>
+          <Card className='max-w-3xl' >
             <CardHeader>
               <CardTitle>Join Us in Making a Difference</CardTitle>
             </CardHeader>
@@ -77,6 +78,20 @@ export default function AboutUs() {
               </ul>
             </CardContent>
           </Card>
+          <Card className='max-w-3xl'>
+              <CardHeader>
+                <CardTitle>Our Mission</CardTitle>
+                <CardDescription>Driving global action for a sustainable future</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <p className="text-gray-600 mb-4">
+                  The World Forum on Climate Change and Environmental Sustainability brings together leaders, scientists, activists, and innovators from around the globe to address the most pressing environmental challenges of our time.
+                </p>
+                <p className="text-gray-600">
+                  Our goal is to foster collaboration, share cutting-edge research, and develop actionable strategies to combat climate change and promote sustainable practices across all sectors of society.
+                </p>
+              </CardContent>
+            </Card>
         </motion.div>
       </div>
     </section>

@@ -91,7 +91,7 @@ export default function Component() {
                 <Link href="/schedule">View Schedule</Link>
               </Button>
               <Button variant="outline" size="sm" asChild>
-                <Link href="/speakers">
+                <Link href="/about-speakers">
                   Our Speakers
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
