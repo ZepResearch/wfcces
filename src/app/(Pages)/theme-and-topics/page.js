@@ -5,7 +5,8 @@ import { motion, useAnimation, useInView } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from '@/components/ui/badge'
-import { Calendar, FileText, UserPlus, BirdIcon, File } from "lucide-react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Calendar, FileText, UserPlus, BirdIcon, File } from 'lucide-react'
 import Link from 'next/link'
 
 export default function ThemeAndTopics() {
@@ -38,7 +39,86 @@ export default function ThemeAndTopics() {
   }
 
   const topics = [
-   "Climate Change and Global Warming","Adaptation and Mitigation Strategies","Climate Risk Assessment and Management","Carbon Sequestration and Emission Reduction","Renewable Energy Innovations (Solar, Wind, Hydropower, etc.)","Green Technology and Smart Cities","Water Scarcity and Conservation Techniques","Sustainable Agriculture and Food Security","Biodiversity and Ecosystem Conservation","Marine and Coastal Sustainability","Air Quality and Pollution Control","Circular Economy and Waste Management","Environmental Policy and Governance","Role of AI and Big Data in Environmental Monitoring","Impact of Climate Change on Public Health","Sustainable Development Goals (SDGs) and Climate Action","Environmental Justice and Ethics","Education and Awareness for Sustainability","Social and Economic Impacts of Environmental Degradation"
+    {
+      title: "Climate Science and Policy",
+      content: [
+        "Advances in Climate Modeling and Prediction",
+        "Global Climate Policy: Challenges and Opportunities",
+        "Climate Justice and Equity"
+      ]
+    },
+    {
+      title: "Mitigation Strategies",
+      content: [
+        "Renewable Energy Innovations and Integration",
+        "Carbon Sequestration and Negative Emissions Technologies",
+        "Sustainable Transportation Solutions"
+      ]
+    },
+    {
+      title: "Adaptation and Resilience",
+      content: [
+        "Climate-Resilient Infrastructure Development",
+        "Community-Based Adaptation Strategies",
+        "Disaster Risk Reduction and Management"
+      ]
+    },
+    {
+      title: "Biodiversity and Ecosystem Conservation",
+      content: [
+        "Protecting Endangered Species and Habitats",
+        "Restoration Ecology and Reforestation Initiatives",
+        "The Role of Oceans in Climate Regulation"
+      ]
+    },
+    {
+      title: "Sustainable Urban Development",
+      content: [
+        "Green Cities: Innovations in Urban Planning",
+        "Sustainable Housing and Circular Construction",
+        "Smart Cities and IoT for Environmental Management"
+      ]
+    },
+    {
+      title: "Environmental Economics and Finance",
+      content: [
+        "Carbon Pricing and Market Mechanisms",
+        "Green Investment and Financing Sustainable Projects",
+        "Economic Impacts of Climate Change"
+      ]
+    },
+    {
+      title: "Technological Innovations for Sustainability",
+      content: [
+        "Artificial Intelligence for Climate Solutions",
+        "Advancements in Clean Water and Sanitation Technologies",
+        "Waste Management and Recycling Innovations"
+      ]
+    },
+    {
+      title: "Education and Awareness",
+      content: [
+        "Climate Change Communication and Outreach",
+        "Integrating Sustainability into Curricula",
+        "Citizen Science and Public Participation"
+      ]
+    },
+    {
+      title: "Sectoral Approaches to Sustainability",
+      content: [
+        "Agriculture and Food Systems under Climate Stress",
+        "The Role of Industry in Emission Reductions",
+        "Tourism and Sustainable Practices"
+      ]
+    },
+    {
+      title: "Youth and Climate Action",
+      content: [
+        "Empowering Young Leaders for Climate Advocacy",
+        "Innovative Solutions from Youth and Startups",
+        "Climate Entrepreneurship and Social Innovation"
+      ]
+    }
   ]
 
   return (
@@ -54,7 +134,7 @@ export default function ThemeAndTopics() {
           <Badge variant="outline" className="mb-4 text-lg px-4 py-1">Conference Themes</Badge>
           <h2 className="text-4xl font-bold text-primary mb-4">Theme and Topics</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Exploring innovative solutions, research, and strategies to combat climate change and promote sustainability.
+            Exploring innovative solutions, research, and strategies to combat climate change and promote sustainability.
           </p>
         </motion.div>
 
@@ -65,9 +145,11 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-muted-foreground">
-              The World Forum on Climate Change and Environmental Sustainability on March 10–12, 2025, in Geneva, Switzerland, invites researchers, policymakers, innovators, and activists to present their recent work. This forum is a prestigious event designed to provide an excellent international platform for sharing groundbreaking research, innovative solutions, and actionable strategies to combat climate change and foster environmental sustainability.
-                        </p>
-              <p className="leading-relaxed text-lg text-muted-foreground">All abstract submissions will undergo rigorous peer review to ensure originality, technical merit, and relevance to the conference themes    </p>
+                The World Forum on Climate Change and Environmental Sustainability on March 10–12, 2025, in Geneva, Switzerland, invites researchers, policymakers, innovators, and activists to present their recent work. This forum is a prestigious event designed to provide an excellent international platform for sharing groundbreaking research, innovative solutions, and actionable strategies to combat climate change and foster environmental sustainability.
+              </p>
+              <p className="leading-relaxed text-lg text-muted-foreground mt-4">
+                All abstract submissions will undergo rigorous peer review to ensure originality, technical merit, and relevance to the conference themes.
+              </p>
             </CardContent>
           </Card>
         </motion.div>
@@ -75,30 +157,26 @@ export default function ThemeAndTopics() {
         <motion.div variants={itemVariants} className="mt-12">
           <Card className="overflow-hidden shadow-2xl bg-slate-100 backdrop-blur-sm border-2 border-primary/20">
             <CardHeader className="bg-white text-secondary-foreground p-6">
-              <CardTitle className="text-3xl underline underline-offset-2 decoration-primary">Conference Themes and Topics</CardTitle>
+              <CardTitle className="text-3xl underline underline-offset-2 decoration-primary">Session and Tracks</CardTitle>
             </CardHeader>
             <CardContent className="p-6">
               <p className="mb-6 text-lg text-black">
-              The forum encourages submissions on the following topics related to climate change and environmental sustainability. Other relevant areas will also be considered              </p>
-              <motion.div 
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
-                variants={{
-                  visible: { transition: { staggerChildren: 0.05 } }
-                }}
-              >
+                The forum encourages submissions on the following topics related to climate change and environmental sustainability. Other relevant areas will also be considered.
+              </p>
+              <Accordion type="single" collapsible className="w-full">
                 {topics.map((topic, index) => (
-                  <motion.div
-                    key={index}
-                    className="bg-white text-accent-foreground p-3 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
-                    variants={{
-                      hidden: { opacity: 0, scale: 0.9 },
-                      visible: { opacity: 1, scale: 1, transition: { duration: 0.3 } }
-                    }}
-                  >
-                    {topic}
-                  </motion.div>
+                  <AccordionItem key={index} value={`item-${index}`}>
+                    <AccordionTrigger className="text-lg font-semibold">{topic.title}</AccordionTrigger>
+                    <AccordionContent>
+                      <ul className="list-disc pl-6">
+                        {topic.content.map((item, itemIndex) => (
+                          <li key={itemIndex} className="text-gray-800 font-medium text-base">{item}</li>
+                        ))}
+                      </ul>
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </motion.div>
+              </Accordion>
             </CardContent>
           </Card>
         </motion.div>
@@ -110,7 +188,7 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-muted-foreground">
-              Submitted abstracts will be reviewed by the Scientific Committee to ensure they align with the conference objectives and themes. Submissions should report original and previously unpublished research findings. Manuscripts must adhere to the conference&apos;s format and guidelines, which will be shared with accepted participants.
+                Submitted abstracts will be reviewed by the Scientific Committee to ensure they align with the conference objectives and themes. Submissions should report original and previously unpublished research findings. Manuscripts must adhere to the conference&apos;s format and guidelines, which will be shared with accepted participants.
               </p>
             </CardContent>
           </Card>
@@ -118,16 +196,16 @@ export default function ThemeAndTopics() {
 
         <motion.div variants={itemVariants} className="flex flex-col md:flex-row gap-6 mt-12 justify-center items-center mx-auto">
           <Link href={'/submission'}>
-          <Button className="flex-1 text-xl py-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" variant="default">
-            <FileText className="mr-2 h-6 w-6" />
-            Submit Your Paper
-          </Button>
-         </Link>
-         <Link href={'/registration'}>
-          <Button className="flex-1 text-xl py-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" variant="secondary">
-            <UserPlus className="mr-2 h-6 w-6" />
-            Register for the Conference
-          </Button>
+            <Button className="flex-1 text-xl py-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" variant="default">
+              <FileText className="mr-2 h-6 w-6" />
+              Submit Your Paper
+            </Button>
+          </Link>
+          <Link href={'/registration'}>
+            <Button className="flex-1 text-xl py-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" variant="secondary">
+              <UserPlus className="mr-2 h-6 w-6" />
+              Register for the Conference
+            </Button>
           </Link>
         </motion.div>
 
@@ -165,3 +243,4 @@ export default function ThemeAndTopics() {
     </motion.section>
   )
 }
+

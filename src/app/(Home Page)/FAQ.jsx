@@ -3,8 +3,9 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp, Mail, MapPin, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const faqs = [
   {
@@ -107,10 +108,28 @@ export default function FAQ() {
                 </motion.div>
               ))}
             </dl>
+              <div className="flex flex-col justify-start p-4  items-start mt-10 border-l-2 border-t-2 max-w-2xl  border-blue-400/90">
+              <div className="space-y-4 text-sm font-semibold">
+                <div className="flex items-end">
+                  <Mail className="mr-2 text-primary" />
+                  <span>info@wfcces.com</span>
+                </div>
+                <div className="flex items-end">
+                  <Phone className="mr-2 text-primary" />
+                  <span>+91 7358737843</span>
+                </div>
+                <div className="flex items-end ">
+                  <MapPin className="mr-2  text-primary" />
+                  <span>DCB-330, 3rd Floor, DLF Cyber City, Patia, Bhubaneswar, ODISHA - 751024 India</span>
+                </div>
+              </div>
+              < Link href={'/contact'}>
+              <Button variant='outline' className='border-blue-300 mt-7'>
+                Contact us
+              </Button>
+              </Link>
+              </div>
           </div>
-        </div>
-        <div className="flex justify-center items-center mt-10">
-          <Button size="lg">Contact Us</Button>
         </div>
       </div>
     </div>

@@ -13,10 +13,10 @@ export default function Component() {
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="relative mb-8">
-        <Image src={'https://res.cloudinary.com/dwlhesiyi/image/upload/v1729260387/erph7fml9unxiowlmrmg.png'}alt="zep logo  "
+        {/* <Image src={'https://res.cloudinary.com/dwlhesiyi/image/upload/v1729260387/erph7fml9unxiowlmrmg.png'}alt="zep logo  "
           width={400}
           height={400}
-          />
+          /> */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
