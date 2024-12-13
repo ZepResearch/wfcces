@@ -33,11 +33,11 @@ export default function Component() {
                 <div className="grid gap-4 md:grid-cols-3">
                   <div className="flex items-center gap-2 bg-gray-100/70 p-3 rounded-lg">
                     <MapPin className="text-blue-600" />
-                    <span className="font-medium">San Francisco, CA</span>
+                    <span className="font-medium">kuala lumpur, Malaysia</span>
                   </div>
                   <div className="flex items-center gap-2 bg-gray-100/70 p-3 rounded-lg">
                     <Calendar className="text-blue-600" />
-                    <span className="font-medium">June 15-18, 2024</span>
+                    <span className="font-medium">May 22-23, 2025</span>
                   </div>
                   {/* <div className="flex items-center gap-2 bg-gray-100 p-3 rounded-lg">
                     <Users className="text-blue-600" />

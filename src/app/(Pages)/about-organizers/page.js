@@ -36,12 +36,12 @@ export default function AboutCompany() {
   }
 
   const conferenceFeatures = [
-    { icon: CalendarDays, text: "3-day event: October 15-17, 2024" },
-    { icon: MapPin, text: "Grand Hotel, New York City" },
+    { icon: CalendarDays, text: "2-day event: May 22-23, 2025" },
+    { icon: MapPin, text: "kuala lumpur, Malaysia" },
     { icon: Users, text: "500+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
-    { icon: Mail, text: "info@tourismconference.com" },
-    { icon: Phone, text: "+1 (555) 123-4567" },
+    { icon: Mail, text: "info@wfcces.com" },
+    { icon: Phone, text: "+91 7358737843" },
   ]
 
   return (
@@ -114,7 +114,7 @@ export default function AboutCompany() {
                 Join us in shaping the future of tourism and hospitality
               </CardDescription>
               <p className="text-muted-foreground">
-                October 15-17, 2024 • Grand Hotel, New York City, USA
+              May 22-23, 2025 • kuala lumpur, Malaysia
               </p>
             </CardContent>
           </Card>

@@ -23,7 +23,7 @@ const footerSections = [
   {
     title: "Quick Links",
     links: [
-      { name: "Submit Abstract", href: "/submit" },
+      { name: "Submit Abstract", href: "/submission" },
       { name: "Venue", href: "/venue" },
       { name: "Contact", href: "/contact" },
       { name: "Awards", href: "/awards" },
