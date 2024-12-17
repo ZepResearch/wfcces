@@ -86,7 +86,7 @@ export default function Footer() {
             </div>
             <div className="text-base">
               <div className="flex items-center space-x-2 ">
-                <MailIcon className="h-4 w-4 text-blue-600 " />
+                <MailIcon className="h-4 w-4 text-blue-100 " />
                 <a
                   href="mailto:info@icemss.com"
                   className="text-blue-100 dark:text-blue-200 hover:text-blue-300 transition-colors"
@@ -95,7 +95,7 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4 text-blue-600 " />
+                <Phone className="h-4 w-4 text-blue-100 " />
                 <a
                   href="tel:+918260080050"
                   className="text-blue-100 dark:text-blue-200 hover:text-blue-300 transition-colors"
@@ -104,7 +104,7 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <MapIcon  className="h-4 w-4 text-blue-600 " />
+                <MapIcon  className="h-4 w-4 text-blue-100 " />
                 <a
                   href="/venue"
                   className="text-blue-100 dark:text-blue-200 hover:text-blue-300 transition-colors"
@@ -113,7 +113,7 @@ export default function Footer() {
                 </a>
               </div>
               <div className="flex items-center space-x-2">
-                <Calendar className="h-4 w-4 text-blue-600 " />
+                <Calendar className="h-4 w-4 text-blue-100 " />
                 <a
                   href="/schedule"
                   className="text-blue-100 dark:text-blue-200 hover:text-blue-300 transition-colors"
