@@ -31,7 +31,7 @@ const timeline = [
     name: "Registration deadline",
     description:
       "Join us for three days of insights on climate action and sustainable development.",
-    date: "September 15, 2025",
+    date: "February 10, 2025",
     icon: Users,
   },
 ];

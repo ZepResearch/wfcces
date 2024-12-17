@@ -36,8 +36,8 @@ export default function AboutCompany() {
   }
 
   const conferenceFeatures = [
-    { icon: CalendarDays, text: "2-day event: May 22-23, 2025" },
-    { icon: MapPin, text: "kuala lumpur, Malaysia" },
+    { icon: CalendarDays, text: "2-day event: May 22nd - 23rd, 2025" },
+    { icon: MapPin, text: "Kuala Lumpur, Malaysia" },
     { icon: Users, text: "500+ Expected Attendees" },
     { icon: Globe, text: "International Speakers" },
     { icon: Mail, text: "info@wfcces.com" },
@@ -114,7 +114,7 @@ export default function AboutCompany() {
                 Join us in shaping the future of tourism and hospitality
               </CardDescription>
               <p className="text-muted-foreground">
-              May 22-23, 2025 • kuala lumpur, Malaysia
+              May 22nd - 23rd, 2025 • Kuala Lumpur, Malaysia
               </p>
             </CardContent>
           </Card>

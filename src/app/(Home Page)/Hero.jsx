@@ -39,8 +39,8 @@ export default function Component() {
             <MountainSnow className="h-8 w-8 text-blue-200 sm:h-12 sm:w-12" />
           </motion.div>
           <div className="mt-6 font-medium text-lg ">
-          <h1><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><MapPin className="h-5 w-5 text-blue-700"/> Venue</span>: kuala lumpur, Malaysia</h1>
-          <h1><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><Calendar className="h-5 w-5 text-blue-700"/> Date</span>: May 22-23, 2025</h1>
+          <h1><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><MapPin className="h-5 w-5 text-blue-700"/> Venue</span>: Kuala Lumpur, Malaysia</h1>
+          <h1><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><Calendar className="h-5 w-5 text-blue-700"/> Date</span>: May 22nd - 23rd, 2025</h1>
           </div>
         </div>
 

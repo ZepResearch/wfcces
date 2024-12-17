@@ -37,7 +37,7 @@ export default function Component() {
                   </div>
                   <div className="flex items-center gap-2 bg-gray-100/70 p-3 rounded-lg">
                     <Calendar className="text-blue-600" />
-                    <span className="font-medium">May 22-23, 2025</span>
+                    <span className="font-medium">May 22nd - 23rd, 2025</span>
                   </div>
                   {/* <div className="flex items-center gap-2 bg-gray-100 p-3 rounded-lg">
                     <Users className="text-blue-600" />

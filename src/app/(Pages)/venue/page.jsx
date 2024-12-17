@@ -18,21 +18,21 @@ export default function VenuePage() {
       name: "Petronas Twin Towers",
       type: "Landmark",
       icon: Camera,
-      description: "Iconic skyscrapers with observation deck and skybridge.",
+      description: "The iconic Petronas Twin Towers dominate Kuala Lumpur's skyline, standing at an impressive 451.9 meters (1,483 feet) tall. These gleaming stainless steel-clad towers, designed to resemble motifs found in Islamic art, offer visitors a breathtaking experience. The skybridge on the 41st floor connects the two towers and provides stunning views of the city. The observation deck on the 86th floor offers an even more spectacular panorama. At night, the towers light up, creating a mesmerizing display that symbolizes Malaysia's growth and ambition.",
       image: "https://images.unsplash.com/photo-1520038933211-3663745c0de8?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Batu Caves",
       type: "Religious Site",
       icon: Tree,
-      description: "Hindu shrine with giant statue and limestone caves.",
+      description: "Batu Caves is a captivating limestone hill featuring a series of caves and cave temples, located just north of Kuala Lumpur. The site is dominated by a colossal 42.7-meter high statue of Lord Murugan, the Hindu deity of war, standing guard at the entrance. Visitors must climb 272 colorful steps to reach the main cave, known as Cathedral Cave, which houses several Hindu shrines. The caves are not only a religious site but also a haven for rock climbing enthusiasts. During the annual Thaipusam festival, Batu Caves comes alive with thousands of devotees participating in rituals and processions.",
       image: "https://plus.unsplash.com/premium_photo-1678303397238-76250a5ebf73?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Jalan Alor",
       type: "Food Street",
       icon: Utensils,
-      description: "Famous street food haven with diverse local cuisine.",
+      description: "Jalan Alor is a food lover's paradise, offering a vibrant and authentic taste of Malaysian street food culture. As night falls, this bustling street in the heart of Kuala Lumpur transforms into a lively food haven. Dozens of hawker stalls and seafood restaurants line the street, filling the air with tantalizing aromas. Visitors can sample a wide array of local delicacies, from satay and char kway teow to durian fruit and ais kacang. The atmosphere is electric, with plastic chairs and tables spilling onto the street, creating a unique dining experience. Jalan Alor is not just about food; it's a cultural immersion that showcases the diversity of Malaysian cuisine and the warmth of its people.",
       image: "https://images.unsplash.com/photo-1689198920518-39a33be29d2b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
@@ -135,7 +135,7 @@ export default function VenuePage() {
                       height={400}
                       className="w-full h-52 object-cover rounded-md mb-4"
                     />
-                    <p className="text-gray-600">{place.description}</p>
+                    <p className="text-gray-600 text-sm">{place.description}</p>
                   </CardContent>
                 </Card>
               </motion.div>
