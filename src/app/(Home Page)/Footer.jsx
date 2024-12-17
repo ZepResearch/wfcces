@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Facebook, Twitter, Linkedin, Instagram, Youtube, Calendar, MapIcon, Phone, MailIcon } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Youtube, Calendar, MapIcon, Phone, MailIcon } from 'lucide-react';
 
 const footerSections = [
   {
@@ -46,13 +46,22 @@ const socialLinks = [
   { name: "Twitter", href: "https://x.com/Zepresearch", icon: Twitter },
   { name: "LinkedIn", href: "https://www.linkedin.com/company/zep-research/", icon: Linkedin },
   { name: "Youtube", href: "https://youtube.com/@zepresearch", icon: Youtube },
-
 ];
 
 export default function Footer() {
   return (
-    <footer className="bg-white dark:bg-blue-900 border-t-2 border-blue-400">
-      <div className="container mx-auto px-4 py-12">
+    <footer className="relative bg-white dark:bg-blue-900 border-t-2 border-blue-400">
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1579003593419-98f949b9398f?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Footer background"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+        />
+        <div className="absolute inset-0 bg-black dark:bg-blue-900 bg-opacity-70 dark:bg-opacity-90"></div>
+      </div>
+      <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0 md:w-1/3">
             <Link href="/" className="inline-block mb-4">
@@ -68,7 +77,7 @@ export default function Footer() {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-blue-600 hover:text-blue-500 transition-colors"
+                  className="text-blue-600 hover:text-blue-300 transition-colors"
                   aria-label={item.name}
                 >
                   <item.icon className="h-6 w-6" />
@@ -76,12 +85,11 @@ export default function Footer() {
               ))}
             </div>
             <div className="text-base">
-
               <div className="flex items-center space-x-2 ">
                 <MailIcon className="h-4 w-4 text-blue-600 " />
                 <a
                   href="mailto:info@icemss.com"
-                  className="text-blue-800 hover:text-blue-500 transition-colors"
+                  className="text-blue-100 dark:text-blue-200 hover:text-blue-300 transition-colors"
                 >
                   info@icemss.com
                 </a>
@@ -90,7 +98,7 @@ export default function Footer() {
                 <Phone className="h-4 w-4 text-blue-600 " />
                 <a
                   href="tel:+918260080050"
-                  className="text-blue-800 hover:text-blue-500 transition-colors"
+                  className="text-blue-100 dark:text-blue-200 hover:text-blue-300 transition-colors"
                 >
                   +91 82600 80050
                 </a>
@@ -99,7 +107,7 @@ export default function Footer() {
                 <MapIcon  className="h-4 w-4 text-blue-600 " />
                 <a
                   href="/venue"
-                  className="text-blue-800 hover:text-blue-500 transition-colors"
+                  className="text-blue-100 dark:text-blue-200 hover:text-blue-300 transition-colors"
                 >
                   Conference Venue
                 </a>
@@ -108,13 +116,12 @@ export default function Footer() {
                 <Calendar className="h-4 w-4 text-blue-600 " />
                 <a
                   href="/schedule"
-                  className="text-blue-800 hover:text-blue-500 transition-colors"
+                  className="text-blue-100 dark:text-blue-200 hover:text-blue-300 transition-colors"
                 >
                   Event Calendar
                 </a>
               </div>
-           
-              </div>
+            </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:w-2/3">
             {footerSections.map((section) => (
@@ -127,7 +134,7 @@ export default function Footer() {
                     <li key={link.name}>
                       <Link
                         href={link.href}
-                        className="hover:text-blue-500 transition-colors"
+                        className="text-blue-100 dark:text-blue-200 hover:text-blue-300 transition-colors"
                       >
                         {link.name}
                       </Link>
@@ -139,7 +146,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 pt-8 border-t border-blue-400 dark:border-blue-700 text-center">
-          <p className="text-sm text-blue-500 dark:text-blue-300">
+          <p className="text-sm text-blue-100 dark:text-blue-300">
             &copy; {new Date().getFullYear()} World Forum
             on Climate Change and Environmental Sustainability. All rights reserved.
           </p>
@@ -148,3 +155,4 @@ export default function Footer() {
     </footer>
   );
 }
+
