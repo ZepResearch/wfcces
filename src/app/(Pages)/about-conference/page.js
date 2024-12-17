@@ -131,7 +131,7 @@ export default function AboutUs() {
                   
                   <h3 className="text-xl font-semibold mb-4 text-blue-600">Shape a Greener Future</h3>
                   <p className="text-gray-600 mb-6">
-                    Contribute to shaping sustainable and resilient societies. Your ideas, insights, and engagement can drive meaningful change for our planet's future.
+                    Contribute to shaping sustainable and resilient societies. Your ideas, insights, and engagement can drive meaningful change for our planets future.
                   </p>
                   
                   <h3 className="text-xl font-semibold mb-4 text-blue-600">Gain a Global Perspective</h3>
