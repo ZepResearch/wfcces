@@ -116,7 +116,7 @@ export default function FAQ() {
                 </div>
                 <div className="flex items-end">
                   <Phone className="mr-2 text-primary" />
-                  <span>+91 7358737843</span>
+                  <span>+91 82600 80050</span>
                 </div>
                 <div className="flex items-end ">
                   <MapPin className="mr-2  text-primary" />
