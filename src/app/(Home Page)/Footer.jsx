@@ -91,7 +91,7 @@ export default function Footer() {
                   href="mailto:info@icemss.com"
                   className="text-blue-100 dark:text-blue-200 hover:text-blue-300 transition-colors"
                 >
-                  info@icemss.com
+                 info@wfcces.com
                 </a>
               </div>
               <div className="flex items-center space-x-2">
