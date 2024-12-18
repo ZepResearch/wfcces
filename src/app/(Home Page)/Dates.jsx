@@ -10,7 +10,7 @@ const timeline = [
     name: "Early bird registration deadline",
     description:
       "Submit your research papers on climate change mitigation and adaptation strategies.",
-    date: "December 15, 2024",
+    date: "January 4, 2025",
     icon: Calendar,
   },
   {

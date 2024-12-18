@@ -220,7 +220,7 @@ export default function ThemeAndTopics() {
             <CardContent className="p-6">
               <ul className="space-y-4">
                 {[
-                  { date: "December 15, 2024", event: "Early bird registration deadline", icon: < BirdIcon className="h-6 w-6" /> },
+                  { date: "January 4, 2025", event: "Early bird registration deadline", icon: < BirdIcon className="h-6 w-6" /> },
                   { date: "January 10, 2025", event: "Abstract submission deadline", icon: <UserPlus className="h-6 w-6" /> },
                   { date: "February 1, 2025", event: "Full paper submission deadline", icon: <FileText className="h-6 w-6" /> },
                   { date: "October February 10, 2025", event: "Registration deadline", icon: <File className="h-6 w-6" /> },
