@@ -64,13 +64,15 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12 relative z-10">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0 md:w-1/3">
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="mb-2 text-xl text-blue-400 inline-flex items-center space-x-1">
               <Image
-                src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1731574048/riqztbfvpvaqzlqk19mc.png"
+                src="/logosingle.png"
                 alt="Climate Conference Logo"
-                width={200}
+                width={100}
                 height={80}
+                className="0"
               />
+              <h1 className="mt-3 font-semibold">WFCCES</h1>
             </Link>
             <div className="flex space-x-4 ml-4 mb-4">
               {socialLinks.map((item) => (

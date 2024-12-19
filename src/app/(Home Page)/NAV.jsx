@@ -167,7 +167,7 @@ export default function Navbar() {
         <div className="flex items-center">
           <Link href="/" className="text-2xl font-bold">
             <Image
-              src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1731574048/riqztbfvpvaqzlqk19mc.png"
+              src="/logo.png"
               alt="Climate Conference Logo"
               width={150}
               height={150}
