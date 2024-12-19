@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { MapPin, Clock, Utensils, Camera, TreesIcon as Tree } from 'lucide-react';
+import { MapPin, Clock, Utensils, Camera, TreesIcon as Tree, Building, Leaf, ShoppingBag } from 'lucide-react';
 
 export default function VenuePage() {
   const nearbyPlaces = [
@@ -35,6 +35,27 @@ export default function VenuePage() {
       description: "Jalan Alor is a food lover's paradise, offering a vibrant and authentic taste of Malaysian street food culture. As night falls, this bustling street in the heart of Kuala Lumpur transforms into a lively food haven. Dozens of hawker stalls and seafood restaurants line the street, filling the air with tantalizing aromas. Visitors can sample a wide array of local delicacies, from satay and char kway teow to durian fruit and ais kacang. The atmosphere is electric, with plastic chairs and tables spilling onto the street, creating a unique dining experience. Jalan Alor is not just about food; it's a cultural immersion that showcases the diversity of Malaysian cuisine and the warmth of its people.",
       image: "https://images.unsplash.com/photo-1689198920518-39a33be29d2b?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
+    {
+      name: "KL Tower (Menara Kuala Lumpur)",
+      type: "Observatory",
+      icon: Building,
+      description: "Standing tall at 421 meters, the KL Tower is one of the city's most distinctive architectural landmarks. This telecommunications and broadcasting tower offers visitors the highest viewing deck in the city at its Observation Deck. The tower's revolving restaurant, Atmosphere 360, provides a unique dining experience with panoramic views of the city. The surrounding KL Tower Mini Zoo and KL Forest Eco Park add to the attraction, making it a perfect destination for both nature lovers and city enthusiasts.",
+      image: "https://res.cloudinary.com/dtsuvx8dz/image/upload/v1734587689/samples/n2rjdoungblxvjhrnh1y.jpg",
+    },
+    {
+      name: "Lake Gardens (Perdana Botanical Gardens)",
+      type: "Park",
+      icon: Leaf,
+      description: "The Lake Gardens, also known as Perdana Botanical Gardens, is Kuala Lumpur's oldest public park, spanning over 91 hectares of green space. This verdant oasis features themed gardens, including an Orchid Garden with over 800 species, a Hibiscus Garden showcasing Malaysia's national flower, and a Bird Park housing hundreds of species. The park's centerpiece is a large lake surrounded by walking paths, perfect for morning jogs or afternoon strolls. Various monuments and museums within the park grounds make it a cultural and historical destination as well.",
+      image: "https://res.cloudinary.com/dtsuvx8dz/image/upload/v1734587755/samples/szdajs1kify6lm30hp82.jpg",
+    },
+    {
+      name: "Pavilion KL",
+      type: "Shopping Mall",
+      icon: ShoppingBag,
+      description: "Pavilion KL is a premier shopping destination located in the heart of Bukit Bintang. This award-winning mall houses over 700 retail outlets across 1.37 million square feet of retail space. From luxury boutiques to local brands, the mall caters to all shopping preferences. Its iconic Crystal Fountain at the main entrance has become a popular meeting point. The mall's Gourmet Emporium offers an extensive selection of local and international dining options. Regular events, festivities, and exhibitions make Pavilion KL not just a shopping center but a cultural hub.",
+      image: "https://res.cloudinary.com/dtsuvx8dz/image/upload/v1734587885/samples/awmpd2je1koabowbntdi.webp",
+    },
   ];
 
   return (
@@ -58,19 +79,19 @@ export default function VenuePage() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-2xl text-blue-600">
-                  Kuala Lumpur Convention Centre
+                Kuala Lumpur, Malaysia
                 </CardTitle>
                 <CardDescription>
                   Your gateway to sustainable discussions in the heart of Malaysia
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-4 font-semibold text-gray-700">
                   <MapPin className="mr-2 text-blue-500" />
-                  <p>Kuala Lumpur City Centre, 50088 Kuala Lumpur, Malaysia</p>
+                  <p>Holiday Inn Express Kuala Lumpur City Centre, an IHG Hotel,Kuala Lumpur, Malaysia</p>
                 </div>
                 <p className="text-gray-600 mb-4">
-                  The Kuala Lumpur Convention Centre is a world-class facility
+                  The Kuala Lumpur city Centre is a world-class facility
                   designed to host international events. With its strategic location
                   in the heart of Kuala Lumpur and state-of-the-art amenities,
                   it&apos;s the perfect setting for our World Forum on sustainability
@@ -90,7 +111,7 @@ export default function VenuePage() {
             className="h-[400px]"
           >
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.7748771909687!2d101.71116661475883!3d3.1539877977075494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc37d12d669c1f%3A0x9e3afde858878953!2sKuala%20Lumpur%20Convention%20Centre!5e0!3m2!1sen!2sus!4v1628713046665!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.7871516929176!2d101.70610431091363!3d3.1507687531286925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362aba001bed%3A0x1a95bd9e2e38cad4!2sHoliday%20Inn%20Express%20Kuala%20Lumpur%20City%20Centre%2C%20an%20IHG%20Hotel!5e0!3m2!1sen!2sin!4v1734587277384!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -133,7 +154,7 @@ export default function VenuePage() {
                       alt={place.name}
                       width={400}
                       height={400}
-                      className="w-full h-52 object-cover rounded-md mb-4"
+                      className="w-full h-52 object-cover rounded-md mb-4 "
                     />
                     <p className="text-gray-600 text-sm">{place.description}</p>
                   </CardContent>
