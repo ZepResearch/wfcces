@@ -6,9 +6,12 @@ import { motion } from "framer-motion";
 import { ArrowRight, CalculatorIcon, Calendar, LocateIcon, MapPin, MountainSnow } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import Banner from "./Banner";
 
 export default function Component() {
   return (
+          <>
+      <Banner/>
     <section className="relative w-full bg-white px-4 py-12">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
@@ -21,7 +24,7 @@ export default function Component() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center"
-          >
+            >
             <h1 className="text-4xl font-bold leading-tight tracking-tighter sm:text-4xl md:text-6xl">
               Join us for the{" "}
               <span className="relative inline-block">
@@ -31,7 +34,7 @@ export default function Component() {
                 <motion.div
                   className="absolute inset-0 rounded-full bg-blue-400"
                   layoutId="highlight"
-                />
+                  />
               </span>
               <br />
               on Climate Change and Environmental Sustainability
@@ -50,7 +53,7 @@ export default function Component() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
           className="relative mb-12"
-        ><div>
+          ><div>
          
           
         </div>
@@ -62,7 +65,7 @@ export default function Component() {
               height={600}
               className="h-[300px] w-full object-cover sm:h-[400px]"
               priority
-            />
+              />
           </div>
 
           {/* Stats Card */}
@@ -112,7 +115,7 @@ export default function Component() {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
             className="text-2xl font-bold sm:text-3xl"
-          >
+            >
             Shaping a sustainable future
             <br />
             through knowledge and action
@@ -124,13 +127,13 @@ export default function Component() {
               className="absolute inset-0"
               animate={{ rotate: 360 }}
               transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-            >
+              >
               <svg viewBox="0 0 100 100" className="h-full w-full">
                 <path
                   id="curve"
                   d="M 50 50 m -37 0 a 37 37 0 1 1 74 0 a 37 37 0 1 1 -74 0"
                   fill="none"
-                />
+                  />
                 <text className="text-[8px] sm:text-xs">
                   <textPath href="#curve" textLength="230">
                     • Climate Action • Sustainability • Innovation •
@@ -143,12 +146,13 @@ export default function Component() {
               size="sm"
               className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full"
               asChild
-            >
+              >
               <Link href="/registration">register</Link>
             </Button>
           </div>
         </div>
       </div>
     </section>
+              </>
   );
 }

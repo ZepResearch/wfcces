@@ -162,7 +162,7 @@ const MobileNav = () => (
 
 export default function Navbar() {
   return (
-    <div className="border-b border-blue-200  dark:border-blue-800 ">
+    <div className="border-b border-blue-200  dark:border-blue-800 z-20 fixed left-0 right-0 top-0 bg-white ">
       <div className="container mx-auto flex h-16 items-center justify-between px-4 ">
         <div className="flex items-center">
           <Link href="/" className="text-2xl font-bold">
