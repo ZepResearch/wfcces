@@ -15,7 +15,7 @@ export default function Ticket() {
   const tickets = [
     {
       name: "Virtual TICKET",
-      price: 18543, //219
+      price: 219, //219
       period: "month",
       features: [
         "General Admission to Events",
@@ -26,7 +26,7 @@ export default function Ticket() {
     },
     {
       name: "Physical TICKET",
-      price: 27010,//319
+      price: 319,//319
       period: "month",
       features: [
         "Priority Access to All Events",
@@ -49,7 +49,7 @@ export default function Ticket() {
         merchant_id: process.env.NEXT_PUBLIC_CCAVENUE_MERCHANT_ID,
         order_id: generateOrderId(),
         amount: amount.toString(),
-        currency: "INR",
+        currency: "USD",
         redirect_url: `${host}/api/ccavenue/handle`,
         cancel_url: `${host}/api/ccavenue/handle`,
         billing_email: "",
@@ -150,7 +150,7 @@ export default function Ticket() {
                     <div className="text-center space-y-4 p-6">
                       <div className="space-y-1">
                         <div className="text-4xl font-bold">
-                        {`₹${ticket.price.toLocaleString()} `}
+                        ${`${ticket.price.toLocaleString()} `}
                         </div>
                       </div>
                       <Button
