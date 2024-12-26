@@ -145,10 +145,12 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-muted-foreground">
-                The World Forum on Climate Change and Environmental Sustainability on March 10–12, 2025, in Geneva, Switzerland, invites researchers, policymakers, innovators, and activists to present their recent work. This forum is a prestigious event designed to provide an excellent international platform for sharing groundbreaking research, innovative solutions, and actionable strategies to combat climate change and foster environmental sustainability.
+              The World Forum on Climate Change and Environmental Sustainability, scheduled for May 22–23, 2025, in Kuala Lumpur, Malaysia, invites researchers, policymakers, innovators, and activists to present their latest work. This prestigious forum serves as an exceptional international platform to exchange groundbreaking research, innovative solutions, and actionable strategies to combat climate change and promote environmental sustainability              </p>
+              <p className="leading-relaxed text-lg text-muted-foreground mt-4">
+              Participants will engage in vibrant discussions and networking opportunities, addressing pressing environmental challenges and exploring collaborative pathways for a sustainable future.
               </p>
               <p className="leading-relaxed text-lg text-muted-foreground mt-4">
-                All abstract submissions will undergo rigorous peer review to ensure originality, technical merit, and relevance to the conference themes.
+              All submitted abstracts will undergo a rigorous peer review process, ensuring originality, technical merit, and alignment with the conference themes. Join us in shaping the global agenda for a greener tomorrow!
               </p>
             </CardContent>
           </Card>
