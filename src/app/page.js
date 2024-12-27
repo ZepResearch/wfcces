@@ -18,11 +18,11 @@ export default function Home() {
       <AboutSection/>
       <ConferenceObjectives/>
       {/* <SpeakerSection/> */}
-      <SDGSection/>
       {/* conference highlights need to be added */}
       <SpeakersView/>
       <Dates/>
       <ConferenceCTASections/>
+      <SDGSection/>
       <VenueCTA/>
       <Testomonial/>
       <FAQ/>
