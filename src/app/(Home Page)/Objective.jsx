@@ -28,13 +28,13 @@ export default function Component() {
             Conference Objective
           </h1>
 
-          <div className="flex flex-col items-center justify-between h-full pt-2 pb-12">
+          <div className="flex flex-col items-center justify-start h-full pt-2 pb-12">
             <div>
               <h2 className="text-5xl font-bold leading-tight tracking-tighter">
                 Climate Action & Sustainable Future
               </h2>
             </div>
-            <div className="text-justify">
+            <div className="text-justify mt-8">
               <p>
               The World Forum on Climate Change and Environmental Sustainability brings together global leaders, scientists, activists, and innovators to address urgent climate challenges. 
               </p>
@@ -75,7 +75,7 @@ export default function Component() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="space-y-4"
+          className="space-y-12"
         >
           <Card className="hover:drop-shadow-md  transition-all duration-200 ease-in-out">
             <CardContent className="p-6">
@@ -84,7 +84,7 @@ export default function Component() {
               Shed light on the environments critical condition, emphasizing the urgency for immediate and impactful climate action.
 
               </p>
-              <Link href={'/about-conference'}>
+              {/* <Link href={'/about-conference'}>
               <Button
                 variant="outline"
                 size="sm"
@@ -93,7 +93,7 @@ export default function Component() {
                 Learn More
                 <ArrowUpRight className="ml-2 h-4 w-4 text-blue-700" />
               </Button>
-              </Link>
+              </Link> */}
             </CardContent>
           </Card>
           <Card className="hover:drop-shadow-md  transition-all duration-200 ease-in-out">
@@ -103,7 +103,7 @@ export default function Component() {
               Highlight advanced technologies, research, and practices promoting environmental resilience, sustainability, and global eco-friendly development.
 
               </p>
-              <Link href={'/about-conference'}>
+              {/* <Link href={'/about-conference'}>
               <Button
                 variant="outline"
                 size="sm"
@@ -112,7 +112,7 @@ export default function Component() {
                 Learn More
                 <ArrowUpRight className="ml-2 h-4 w-4 text-blue-700" />
               </Button>
-              </Link>
+              </Link> */}
             </CardContent>
           </Card>
           <Card className="hover:drop-shadow-md  transition-all duration-200 ease-in-out">
@@ -121,7 +121,7 @@ export default function Component() {
               <p className="text-sm text-muted-foreground mb-4">
               Encourage partnerships among policymakers, researchers, and organizations to develop innovative, impactful strategies for long-term sustainability.
               </p>
-              <Link href={'/about-conference'}>
+              {/* <Link href={'/about-conference'}>
               <Button
                 variant="outline"
                 size="sm"
@@ -130,7 +130,7 @@ export default function Component() {
                 Learn More
                 <ArrowUpRight className="ml-2 h-4 w-4 text-blue-700" />
               </Button>
-              </Link>
+              </Link> */}
             </CardContent>
           </Card>
         </motion.div>

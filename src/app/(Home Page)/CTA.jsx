@@ -80,6 +80,12 @@ export default function ConferenceCTASections() {
       icon: <Calendar className="w-10 h-10 mb-4 text-blue-500" />,
       link: "/schedule",
     },
+    {
+      title: "Schedule",
+      description: "View the full program of events and sessions.",
+      icon: <Calendar className="w-10 h-10 mb-4 text-blue-500" />,
+      link: "/schedule",
+    },
   ];
 
   return (
@@ -164,7 +170,10 @@ export default function ConferenceCTASections() {
       key={index} 
       variants={itemVariants}
       className={`${
-        index === ctaCards.length - 1 ? 'sm:col-span-2 lg:col-span-2 lg:col-start-2 lg:col-end-4' : ''
+        index >= ctaCards.length - 2 ? 'lg:col-span-2 col-span-1' : ''
+      } ${
+        // Center the last two items
+        index >= ctaCards.length - 2 ? 'lg:col-start-2 col-span-3' : ''
       }`}
     >
       <Card className="h-full bg-slate-50 dark:bg-blue-800 hover:shadow-lg transition-shadow duration-300 border-none">

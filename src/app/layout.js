@@ -26,14 +26,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased mt-12`}
       >
         <Navbar/>
         {children}
       <Footer/>
       <ToastProvider/>
       <TawkToChat/>
-      <FloatingWhatsAppButton/>
+       <FloatingWhatsAppButton phoneNumber="8260080050" message="How can we assist you?"/>
       </body>
     </html>
   );

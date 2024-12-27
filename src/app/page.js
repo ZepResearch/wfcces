@@ -6,7 +6,7 @@ import FAQ from "./(Home Page)/FAQ";
 import Hero from "./(Home Page)/Hero";
 import ConferenceObjectives from "./(Home Page)/Objective";
 import SDGSection from "./(Home Page)/SDGS";
-import SpeakerSection from "./(Home Page)/Speaker";
+import SpeakersView from "./(Home Page)/Speakers";
 import Testomonial from "./(Home Page)/Testomonial";
 import VenueCTA from "./(Home Page)/VebueCTA";
 
@@ -20,6 +20,7 @@ export default function Home() {
       {/* <SpeakerSection/> */}
       <SDGSection/>
       {/* conference highlights need to be added */}
+      <SpeakersView/>
       <Dates/>
       <ConferenceCTASections/>
       <VenueCTA/>
