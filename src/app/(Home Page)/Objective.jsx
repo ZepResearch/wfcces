@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Component() {
   const fadeIn = {
@@ -33,16 +34,13 @@ export default function Component() {
                 Climate Action & Sustainable Future
               </h2>
             </div>
-            <div>
+            <div className="text-justify">
               <p>
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Placeat, \ praesentium laboriosam adipisci reiciendis laudantium
-                deleniti doloremque quo nisi,?
+              The World Forum on Climate Change and Environmental Sustainability brings together global leaders, scientists, activists, and innovators to address urgent climate challenges. 
               </p>
               <p className="text-muted-foreground">
-                Join global leaders, scientists, and activists in addressing the
-                urgent challenges of climate change and exploring innovative
-                solutions for a sustainable tomorrow.
+                Focused on action, collaboration, and knowledge-sharing, the forum aims to raise awareness, explore sustainable solutions, and foster partnerships for impactful strategies, driving global efforts toward a sustainable and resilient future.
+
               </p>
             </div>
           </div>
@@ -81,28 +79,31 @@ export default function Component() {
         >
           <Card className="hover:drop-shadow-md  transition-all duration-200 ease-in-out">
             <CardContent className="p-6">
-              <h3 className="font-semibold mb-2">Increasing Awareness</h3>
+              <h3 className="font-semibold mb-2"> Raise Global Awareness</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Our conference aims to raise global awareness about the critical
-                state of our environment and the urgent need for action.
+              Shed light on the environments critical condition, emphasizing the urgency for immediate and impactful climate action.
+
               </p>
+              <Link href={'/about-conference'}>
               <Button
                 variant="outline"
                 size="sm"
                 className="border-spacing-1 border-blue-500 "
-              >
+                >
                 Learn More
                 <ArrowUpRight className="ml-2 h-4 w-4 text-blue-700" />
               </Button>
+              </Link>
             </CardContent>
           </Card>
           <Card className="hover:drop-shadow-md  transition-all duration-200 ease-in-out">
             <CardContent className="p-6">
-              <h3 className="font-semibold mb-2">Sustainable Solutions</h3>
+              <h3 className="font-semibold mb-2">Explore Sustainable Solutions</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Explore cutting-edge technologies and practices that promote
-                environmental sustainability and resilience.
+              Highlight advanced technologies, research, and practices promoting environmental resilience, sustainability, and global eco-friendly development.
+
               </p>
+              <Link href={'/about-conference'}>
               <Button
                 variant="outline"
                 size="sm"
@@ -111,15 +112,16 @@ export default function Component() {
                 Learn More
                 <ArrowUpRight className="ml-2 h-4 w-4 text-blue-700" />
               </Button>
+              </Link>
             </CardContent>
           </Card>
           <Card className="hover:drop-shadow-md  transition-all duration-200 ease-in-out">
             <CardContent className="p-6">
-              <h3 className="font-semibold mb-2">Sustainable Solutions</h3>
+              <h3 className="font-semibold mb-2">Foster Collaboration</h3>
               <p className="text-sm text-muted-foreground mb-4">
-                Explore cutting-edge technologies and practices that promote
-                environmental sustainability and resilience.
+              Encourage partnerships among policymakers, researchers, and organizations to develop innovative, impactful strategies for long-term sustainability.
               </p>
+              <Link href={'/about-conference'}>
               <Button
                 variant="outline"
                 size="sm"
@@ -128,6 +130,7 @@ export default function Component() {
                 Learn More
                 <ArrowUpRight className="ml-2 h-4 w-4 text-blue-700" />
               </Button>
+              </Link>
             </CardContent>
           </Card>
         </motion.div>

@@ -20,10 +20,10 @@ export default function Home() {
       {/* <SpeakerSection/> */}
       <SDGSection/>
       {/* conference highlights need to be added */}
+      <Dates/>
       <ConferenceCTASections/>
       <VenueCTA/>
       <Testomonial/>
-      <Dates/>
       <FAQ/>
 
     </div>

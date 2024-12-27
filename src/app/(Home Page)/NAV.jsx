@@ -123,7 +123,7 @@ const MobileNav = () => (
             
             
               // { href: "/awards", title: "Awards" },  
-              // { href: "/schedule", title: "Conference Schedule" },
+              { href: "/schedule", title: "Conference Schedule" },
             ]}
             icon={FileText}
           >
@@ -214,6 +214,7 @@ export default function Navbar() {
                       Discover the organizations behind this important event.
                     </ListItem> */}
                     
+                    
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>
@@ -253,13 +254,13 @@ export default function Navbar() {
                     >
                       View the full programs Awards distributions and nominies .
                     </ListItem> */}
-                    {/* <ListItem
+                    <ListItem
                       href="/schedule"
                       title="Conference Schedule"
                       className="hover:bg-slate-50 hover:drop-shadow-md"
                     >
                       View the full program of events and sessions.
-                    </ListItem> */}
+                    </ListItem>
                   </ul>
                 </NavigationMenuContent>
               </NavigationMenuItem>

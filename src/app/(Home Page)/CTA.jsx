@@ -11,6 +11,7 @@ import {
   Users,
   Handshake,
   UserPlus,
+  Calendar,
 } from "lucide-react";
 import Image from "next/image";
 import DotPattern from "@/components/ui/dot-pattern";
@@ -72,6 +73,12 @@ export default function ConferenceCTASections() {
       description: "Meet the experts shaping our climate change conference",
       icon: <Users className="w-10 h-10 mb-4 text-blue-500" />,
       link: "/committee",
+    },
+    {
+      title: "Schedule",
+      description: "View the full program of events and sessions.",
+      icon: <Calendar className="w-10 h-10 mb-4 text-blue-500" />,
+      link: "/schedule",
     },
   ];
 
@@ -147,35 +154,40 @@ export default function ConferenceCTASections() {
             </motion.p>
           </motion.div>
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+  variants={containerVariants}
+  initial="hidden"
+  animate={inView ? "visible" : "hidden"}
+  className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+>
+  {ctaCards.map((card, index) => (
+    <motion.div 
+      key={index} 
+      variants={itemVariants}
+      className={`${
+        index === ctaCards.length - 1 ? 'sm:col-span-2 lg:col-span-2 lg:col-start-2 lg:col-end-4' : ''
+      }`}
+    >
+      <Card className="h-full bg-slate-50 dark:bg-blue-800 hover:shadow-lg transition-shadow duration-300 border-none">
+        <CardContent className="p-6 flex flex-col items-center text-center">
+          {card.icon}
+          <h3 className="text-xl font-bold mb-2">{card.title}</h3>
+          <p className="text-sm text-gray-600 dark:text-blue-100 mb-4">
+            {card.description}
+          </p>
+          <Button
+            size="sm"
+            className="mt-auto bg-blue-400 hover:bg-blue-500/90 text-white inline-flex"
           >
-            {ctaCards.map((card, index) => (
-              <motion.div key={index} variants={itemVariants}>
-                <Card className="h-full bg-slate-50 dark:bg-blue-800 hover:shadow-lg transition-shadow duration-300 border-none">
-                  <CardContent className="p-6 flex flex-col items-center text-center">
-                    {card.icon}
-                    <h3 className="text-xl font-bold mb-2 ">{card.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-blue-100 mb-4">
-                      {card.description}
-                    </p>
-                    <Button
-                      size="sm"
-                      className="mt-auto bg-blue-400 hover:bg-blue-500/90 text-white inline-flex"
-                    
-                      
-                      >
-                  <Link href={card.link}>
-                        Learn More 
-                  </Link><ArrowRight className="ml-2 h-4 w-4" /> 
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+            <Link href={card.link}>
+              Learn More
+            </Link>
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+        </CardContent>
+      </Card>
+    </motion.div>
+  ))}
+</motion.div>
         </div>
       </section>
     </>
