@@ -80,12 +80,7 @@ export default function ConferenceCTASections() {
       icon: <Calendar className="w-10 h-10 mb-4 text-blue-500" />,
       link: "/schedule",
     },
-    {
-      title: "Schedule",
-      description: "View the full program of events and sessions.",
-      icon: <Calendar className="w-10 h-10 mb-4 text-blue-500" />,
-      link: "/schedule",
-    },
+    
   ];
 
   return (
