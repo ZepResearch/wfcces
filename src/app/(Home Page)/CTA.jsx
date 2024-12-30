@@ -164,11 +164,9 @@ export default function ConferenceCTASections() {
     <motion.div 
       key={index} 
       variants={itemVariants}
-      className={`${
-        index >= ctaCards.length - 2 ? 'lg:col-span-2 col-span-1' : ''
-      } ${
+      className={` ${
         // Center the last two items
-        index >= ctaCards.length - 2 ? 'lg:col-start-2 col-span-3' : ''
+        index >= ctaCards.length - 1 ? 'lg:col-start-2 col-span-2' : ''
       }`}
     >
       <Card className="h-full bg-slate-50 dark:bg-blue-800 hover:shadow-lg transition-shadow duration-300 border-none">
