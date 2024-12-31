@@ -2,6 +2,7 @@ import AboutSection from "./(Home Page)/About";
 import CoOrganizationLogos from "./(Home Page)/Co-OrganiztionLogo";
 import ConferenceCTASections from "./(Home Page)/CTA";
 import Dates from "./(Home Page)/Dates";
+import DownloadButtons from "./(Home Page)/Downloadbuttons";
 import FAQ from "./(Home Page)/FAQ";
 import Hero from "./(Home Page)/Hero";
 import ConferenceObjectives from "./(Home Page)/Objective";
@@ -16,6 +17,7 @@ export default function Home() {
       <Hero/>
       <CoOrganizationLogos/>
       <AboutSection/>
+      <DownloadButtons/>
       <ConferenceObjectives/>
       {/* <SpeakerSection/> */}
       {/* conference highlights need to be added */}
