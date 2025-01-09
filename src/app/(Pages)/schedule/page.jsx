@@ -69,14 +69,14 @@ export default function ConferenceSchedule() {
             Shaping Tomorrow&apos;s Sustainable Landscape
           </h1>
           <p className="text-muted-foreground">
-            Join us March 21st-23rd for three days of cutting-edge insights and networking. Reserve your spot today!
+            Join us March 22nd-23rd for two days of cutting-edge insights and networking. Reserve your spot today!
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-[300px_1fr]">
           <Card className="border-primary">
             <CardHeader>
-              <CardTitle>March 2024</CardTitle>
+              <CardTitle>March 2025</CardTitle>
             </CardHeader>
             <CardContent>
               <Calendar

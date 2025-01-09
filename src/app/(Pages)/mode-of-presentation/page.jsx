@@ -54,11 +54,12 @@ export default function Component() {
             Mode of Presentation
           </Badge>
           <h2 className="text-4xl font-bold text-primary mb-4">
-            International Conference on Tourism Management and Hospitality
+          World Forum
+          on Climate Change and Environmental Sustainability
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Choose your preferred method of presenting at the International
-            Conference on Tourism Management and Hospitality
+            Choose your preferred method of presenting at the World Forum
+            on Climate Change and Environmental Sustainability
           </p>
         </motion.div>
         {/* <motion.h1
