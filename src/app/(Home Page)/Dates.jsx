@@ -26,6 +26,7 @@ const DynamicTimeline = () => {
         const pb = new PocketBase('https://wfcces.pockethost.io');
         const records = await pb.collection('dates').getFullList({
           sort: 'date',
+          requestKey: null
         });
 
         // Transform the records to match our timeline format
