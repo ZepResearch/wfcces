@@ -1,51 +1,86 @@
-"use client";
+'use client'
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Calendar, Clock, Zap, Users } from "lucide-react";
+import PocketBase from 'pocketbase';
 
-const timeline = [
-  {
-    name: "Early bird registration deadline",
-    description:
-      "Submit your research papers on climate change mitigation and adaptation strategies.",
-    date: "January 4, 2025",
-    icon: Calendar,
-  },
-  {
-    name: "Abstract submission deadline",
-    description:
-      "Register using our paperless system and receive a virtual conference kit.",
-    date: "January 10, 2025",
-    icon: Clock,
-  },
-  {
-    name: "Full paper submission deadline",
-    description:
-      "Selected papers will be featured in our special Climate Innovation Showcase.",
-    date: "February 1, 2025",
-    icon: Zap,
-  },
-  {
-    name: "Registration deadline",
-    description:
-      "Join us for three days of insights on climate action and sustainable development.",
-    date: "February 10, 2025",
-    icon: Users,
-  },
-];
+// Icon mapping for different event types
+const iconMapping = {
+  'early-bird': Calendar,
+  'abstract': Clock,
+  'full-paper': Zap,
+  'registration': Users,
+  'default': Calendar
+};
 
-export default function VerticalTimeline() {
+const DynamicTimeline = () => {
+  const [timelineData, setTimelineData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchTimelineData = async () => {
+      try {
+        const pb = new PocketBase('https://wfcces.pockethost.io');
+        const records = await pb.collection('dates').getFullList({
+          sort: 'date',
+        });
+
+        // Transform the records to match our timeline format
+        const formattedData = records.map(record => ({
+          name: record.name,
+          description: record.description,
+          date: new Date(record.date).toLocaleDateString('en-US', {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric'
+          }),
+          icon: iconMapping[record.type] || iconMapping.default
+        }));
+
+        setTimelineData(formattedData);
+        setLoading(false);
+      } catch (err) {
+        setError('Failed to fetch timeline data');
+        setLoading(false);
+      }
+    };
+
+    fetchTimelineData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center min-h-[400px]">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-400"></div>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="text-center text-red-500 p-4">
+        {error}
+      </div>
+    );
+  }
+
   return (
     <section className="py-16 bg-white">
       <div className="container max-w-7xl mx-auto px-4">
-        <motion.h2 className="text-3xl text-center pb-12 font-bold tracking-tighter sm:text-3xl md:text-4xl underline-offset-4 underline decoration-blue-400">
+        <motion.h2 
+          className="text-3xl text-center pb-12 font-bold tracking-tighter sm:text-3xl md:text-4xl underline-offset-4 underline decoration-blue-400"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           Conference Dates
         </motion.h2>
         <div className="relative">
           <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 h-full w-1 bg-gray-200" />
-          {timeline.map((item, index) => (
+          {timelineData.map((item, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
@@ -89,4 +124,6 @@ export default function VerticalTimeline() {
       </div>
     </section>
   );
-}
+};
+
+export default DynamicTimeline;
