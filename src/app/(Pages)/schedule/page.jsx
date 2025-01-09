@@ -10,7 +10,7 @@ import { addDays } from "date-fns"
 
 const scheduleData = [
   {
-    date: "March - 22 | Registration",
+    date: "May - 22 | Registration",
     items: [
       { time: "8:00AM - 9:15AM", title: "Registration" },
       { time: "9:15AM - 9:30AM", title: "Inaugural Function" },
@@ -38,7 +38,7 @@ const scheduleData = [
   //   ]
   // },
   {
-    date: "March - 23 | Closing Day",
+    date: "May - 23 | Closing Day",
     items: [
       { time: "9:00AM - 9:30AM", title: "Registration" },
       { time: "9:30AM - 10:00AM", title: "Closing Ceremony Opening Remarks" },
@@ -54,7 +54,7 @@ const scheduleData = [
 ]
 
 export default function ConferenceSchedule() {
-  const startDate = new Date(2025, 2, 22) // March 21, 2024
+  const startDate = new Date(2025, 4, 22) // March 21, 2024
   const [selectedDates, setSelectedDates] = useState([
     startDate,
     addDays(startDate, 1),
@@ -69,14 +69,14 @@ export default function ConferenceSchedule() {
             Shaping Tomorrow&apos;s Sustainable Landscape
           </h1>
           <p className="text-muted-foreground">
-            Join us March 22nd-23rd for two days of cutting-edge insights and networking. Reserve your spot today!
+            Join us May 22nd-23rd for two days of cutting-edge insights and networking. Reserve your spot today!
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-[300px_1fr]">
           <Card className="border-primary">
             <CardHeader>
-              <CardTitle>March 2025</CardTitle>
+              <CardTitle>May 2025</CardTitle>
             </CardHeader>
             <CardContent>
               <Calendar
