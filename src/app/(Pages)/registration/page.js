@@ -1,5 +1,5 @@
 import React from 'react'
-import Ticket from './components/Ticket'
+import Ticket from './components/TIcket'
 import Process from './components/Proccse'
 import CTACancle from './components/Cta-Cancle-Policy'
 
