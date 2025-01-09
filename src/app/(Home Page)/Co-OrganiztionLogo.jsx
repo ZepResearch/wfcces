@@ -41,7 +41,7 @@ export default function CoOrganizationLogos() {
       <div className="container max-w-7xl mx-auto px-4 md:px-6">
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-4xl md:ml-24  sm:text-left mb-8 underline underline-offset-2 decoration-blue-500 dark:decoration-yellow-50">
-            Our Co-organizations
+            Our Co-Organizers
           </h2>
           <CoOrganizationLogosClient logos={logos} />
         </div>
