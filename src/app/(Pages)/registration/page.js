@@ -5,7 +5,7 @@ import CTACancle from './components/Cta-Cancle-Policy'
 
 function page() {
   return (
-    <div>
+    <div className=''>
         <Ticket/>
         <Process/>
         <CTACancle/>
