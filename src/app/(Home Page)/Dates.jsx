@@ -25,7 +25,7 @@ const DynamicTimeline = () => {
       try {
         const pb = new PocketBase('https://wfcces.pockethost.io');
         const records = await pb.collection('dates').getFullList({
-          sort: 'date',
+          sort: '-created',
           requestKey: null
         });
 
@@ -39,7 +39,7 @@ const DynamicTimeline = () => {
             year: 'numeric'
           }),
           icon: iconMapping[record.type] || iconMapping.default
-        }));
+        })).reverse();
 
         setTimelineData(formattedData);
         setLoading(false);
@@ -91,7 +91,7 @@ const DynamicTimeline = () => {
             >
               <div
                 className={`flex items-center mb-2 md:mb-0 w-full ${
-                  index % 2 === 0 ? "md:justify-end" : ""
+                  index % 2 === 1? "md:justify-end" : ""
                 }`}
               >
                 <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-y-0">
@@ -101,7 +101,7 @@ const DynamicTimeline = () => {
                 </div>
                 <div
                   className={`pl-16 md:pl-0 md:w-[calc(50%-2rem)] ${
-                    index % 2 === 0 ? "md:pr-8" : "md:pl-8"
+                    index % 2 === 1 ? "md:pr-8" : "md:pl-8"
                   }`}
                 >
                   <Card>
