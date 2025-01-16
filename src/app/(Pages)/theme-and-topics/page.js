@@ -145,7 +145,7 @@ export default function ThemeAndTopics() {
             </CardHeader>
             <CardContent className="p-6">
               <p className="leading-relaxed text-lg text-muted-foreground">
-              The World Forum on Climate Change and Environmental Sustainability, scheduled for May 22–23, 2025, in Kuala Lumpur, Malaysia, invites researchers, policymakers, innovators, and activists to present their latest work. This prestigious forum serves as an exceptional international platform to exchange groundbreaking research, innovative solutions, and actionable strategies to combat climate change and promote environmental sustainability              </p>
+              The World Forum on Climate Change and Environmental Sustainability, scheduled for May 22<sup>nd</sup>–23<sup>rd</sup>, 2025, in Kuala Lumpur, Malaysia, invites researchers, policymakers, innovators, and activists to present their latest work. This prestigious forum serves as an exceptional international platform to exchange groundbreaking research, innovative solutions, and actionable strategies to combat climate change and promote environmental sustainability              </p>
               <p className="leading-relaxed text-lg text-muted-foreground mt-4">
               Participants will engage in vibrant discussions and networking opportunities, addressing pressing environmental challenges and exploring collaborative pathways for a sustainable future.
               </p>
