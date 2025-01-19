@@ -2,6 +2,94 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Mail, MapPin, Phone } from "lucide-react"
 
+
+export const metadata = {
+  title: "Privacy Policy | WFCCES - Data Protection & Information Usage",
+  description: "Learn how WFCCES protects and manages your personal data. Our privacy policy details data collection, usage, sharing practices, and your rights regarding your information.",
+  keywords: [
+    "WFCCES privacy policy",
+    "data protection policy",
+    "conference data privacy",
+    "personal information protection",
+    "WFCCES data security",
+    "privacy rights",
+    "data collection policy",
+    "information usage policy"
+  ],
+  openGraph: {
+    title: "Privacy Policy - WFCCES Data Protection Guidelines",
+    description: "Understand how WFCCES collects, uses, and protects your personal information. Read our comprehensive privacy policy and data protection measures.",
+    type: "website",
+    url: "https://www.wfcces.com/privacy-policy",
+  },
+  twitter: {
+    card: "summary",
+    title: "WFCCES Privacy Policy & Data Protection",
+    description: "Learn about our commitment to protecting your privacy and personal information at WFCCES.",
+  },
+  alternates: {
+    canonical: "https://www.wfcces.com/privacy-policy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  // Structured data for the privacy policy page
+  jsonLd: {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "WFCCES Privacy Policy",
+    description: "Privacy Policy and data protection guidelines for the World Forum on Climate Change and Environmental Sustainability",
+    mainEntity: {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What information does WFCCES collect?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "We collect personal information (name, email, phone), technical data (IP address, browser type), and conference-related information for registration and participation purposes."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "How is my personal data used?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Your information is used to process conference registrations, provide updates about events, respond to inquiries, and improve our services."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "Who do you share my data with?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "We do not sell your data and only share it when required by law or with trusted partners involved in conference organization."
+          }
+        }
+      ]
+    },
+    organization: {
+      "@type": "Organization",
+      name: "World Forum on Climate Change and Environmental Sustainability",
+      alternateName: "WFCCES",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "DCB-330, 3rd Floor, DLF Cyber City, Patia",
+        addressLocality: "Bhubaneswar",
+        addressRegion: "ODISHA",
+        postalCode: "751024",
+        addressCountry: "IN"
+      },
+      contactPoint: {
+        "@type": "ContactPoint",
+        telephone: "+91-7358737843",
+        email: "info@wfcces.com",
+        contactType: "customer service"
+      }
+    }
+  }
+};
 export default function PrivacyPolicyPage() {
   return (
     <div className="container mx-auto py-12 px-4 max-w-4xl">

@@ -17,11 +17,32 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata = {
-  title: "WFCCES | World Forum on Climate Change and Environmental Sustainability",
-  description: "We are a global platform dedicated to bringing together leaders, scientists, activists, innovators, and change-makers to address the urgent environmental challenges facing our world. At WFCCES",
-};
 
+export const metadata = {
+  title: "World Forum on Climate Change and Environmental Sustainability (WFCCES)",
+  description: "Global platform uniting leaders, scientists, activists, and innovators to address urgent environmental challenges and create a sustainable future through collective action and knowledge sharing.",
+  keywords: "climate change, environmental sustainability, global warming, sustainable development, climate action, environmental conservation, climate science, sustainability forum",
+  authors: [{ name: "WFCCES" }],
+  openGraph: {
+    title: "World Forum on Climate Change and Environmental Sustainability",
+    description: "Join global leaders and experts in addressing urgent environmental challenges for a sustainable future.",
+    type: "website",
+    locale: "en_US",
+    siteName: "WFCCES",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "World Forum on Climate Change and Environmental Sustainability",
+    description: "Global platform for climate action and environmental sustainability.",
+  },
+  alternates: {
+    canonical: "https://www.wfcces.com/",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

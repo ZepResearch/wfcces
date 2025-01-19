@@ -1,6 +1,97 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
+
+export const metadata = {
+  title: "Terms and Conditions | WFCCES Conference 2025",
+  description: "Read WFCCES conference terms and conditions covering registration, cancellation policy, code of conduct, intellectual property rights, and liability information for participants.",
+  keywords: [
+    "WFCCES terms and conditions",
+    "conference terms of service",
+    "event registration terms",
+    "WFCCES conference rules",
+    "conference code of conduct",
+    "intellectual property policy",
+    "liability terms",
+    "event cancellation terms"
+  ],
+  openGraph: {
+    title: "Terms and Conditions - WFCCES Conference 2025",
+    description: "Important terms and conditions for WFCCES conference participation, including registration rules, code of conduct, and cancellation policies.",
+    type: "website",
+    url: "https://www.wfcces.com/terms-and-conditions",
+  },
+  twitter: {
+    card: "summary",
+    title: "WFCCES Conference - Terms and Conditions",
+    description: "Essential terms and conditions for participating in the World Forum on Climate Change and Environmental Sustainability.",
+  },
+  alternates: {
+    canonical: "https://www.wfcces.com/terms-and-conditions",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  // Structured data for the terms page
+  jsonLd: {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "WFCCES Terms and Conditions",
+    description: "Terms and conditions for participation in the World Forum on Climate Change and Environmental Sustainability",
+    mainEntity: {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What are the registration and payment terms?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Registration is confirmed only after successful payment processing. Participants are responsible for providing accurate information."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What is the cancellation policy?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Refunds are provided according to our Cancellation Policy. Full refunds are issued if WFCCES cancels the conference due to unforeseen circumstances."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What is the code of conduct?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Participants must behave respectfully toward all attendees, speakers, and organizers. Disruptive behavior may result in removal without refund."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "What are the intellectual property terms?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "All content remains the intellectual property of WFCCES or respective authors. Unauthorized distribution is prohibited."
+          }
+        }
+      ]
+    },
+    offers: {
+      "@type": "Offer",
+      itemOffered: {
+        "@type": "Service",
+        name: "WFCCES Conference 2025 Registration",
+        description: "Registration for the World Forum on Climate Change and Environmental Sustainability Conference"
+      },
+      termsOfService: "https://www.wfcces.com/terms-and-conditions"
+    },
+    organization: {
+      "@type": "Organization",
+      name: "World Forum on Climate Change and Environmental Sustainability",
+      alternateName: "WFCCES"
+    }
+  }
+};
 export default function TermsAndConditionsPage() {
   return (
     <div className="container mx-auto py-12 px-4 max-w-4xl">

@@ -4,6 +4,80 @@ import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
+export const metadata = {
+  title: "Cancellation Policy | WFCCES Conference 2025",
+  description: "Learn about WFCCES conference cancellation and refund policies. Get up to 100% refund for cancellations 60+ days before the event, 50% for 30-59 days, and understand our refund process.",
+  keywords: [
+    "WFCCES cancellation policy",
+    "conference refund policy",
+    "climate conference cancellation",
+    "WFCCES refunds",
+    "conference booking cancellation",
+    "environmental conference refund",
+    "WFCCES 2025 cancellation",
+    "conference registration policy"
+  ],
+  openGraph: {
+    title: "Cancellation & Refund Policy - WFCCES Conference 2025",
+    description: "Clear guidelines on conference cancellation policies and refund procedures for the World Forum on Climate Change and Environmental Sustainability 2025.",
+    type: "website",
+    url: "https://www.wfcces.com/cancellation-policy",
+  },
+  twitter: {
+    card: "summary",
+    title: "WFCCES Conference 2025 - Cancellation Policy",
+    description: "Understand our conference cancellation policies and refund procedures. Transparent guidelines for all attendees.",
+  },
+  alternates: {
+    canonical: "https://www.wfcces.com/cancellation-policy",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  // Structured data for the policy page
+  jsonLd: {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "WFCCES Conference Cancellation Policy",
+    description: "Cancellation and refund policy for the World Forum on Climate Change and Environmental Sustainability 2025",
+    mainEntity: {
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "What is the refund policy for early cancellations?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Cancellations made 60+ days before the conference receive a 100% refund."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "How do I cancel my registration?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Log in to your WFCCES conference account, navigate to My Registrations, select the registration to cancel, and follow the cancellation process."
+          }
+        },
+        {
+          "@type": "Question",
+          name: "How long do refunds take to process?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Refunds are processed to the original form of payment within 10 business days of approval."
+          }
+        }
+      ]
+    },
+    organization: {
+      "@type": "Organization",
+      name: "World Forum on Climate Change and Environmental Sustainability",
+      alternateName: "WFCCES"
+    }
+  }
+};
+
 export default function CancellationPolicy() {
   return (
     <div className="container mx-auto py-12 px-4 max-w-4xl">

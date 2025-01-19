@@ -1,251 +1,76 @@
-"use client";
-
-import { useState } from "react";
-import Image from "next/image";
-import { motion } from "framer-motion";
-import {
-  Facebook,
-  Twitter,
-  Instagram,
-  Mail,
-  Phone,
-  MapPin,
-  Linkedin,
-  Youtube,
-} from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-
-import { toast } from "react-toastify";
-import { useCustomToast } from "@/hooks/useCustomToast";
-export default function ContactUs() {
-  const { showSuccessToast, showErrorToast } = useCustomToast();
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    country: "",
-    message: "",
-  });
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [id]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
-
-    try {
-      const response = await fetch("/api/send", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Something went wrong");
+import React from 'react'
+import ContactUs from './Content'
+export const metadata = {
+  title: "Contsct Us WFCCES | World Forum on Climate Change and Environmental Sustainability",
+  description: "Join WFCCES in Kuala Lumpur (May 22-23, 2025) - A global platform uniting climate scientists, policymakers, and innovators to address environmental challenges. Connect with 50+ world-renowned experts and shape sustainable solutions.",
+  keywords: [
+    "climate change forum",
+    "environmental sustainability",
+    "WFCCES",
+    "climate science conference",
+    "sustainability experts",
+    "climate action",
+    "Kuala Lumpur climate conference",
+    "environmental leadership",
+    "sustainability conference 2025",
+    "climate change solutions"
+  ],
+  openGraph: {
+    title: "Contsct Us WFCCES - Global Climate Change & Sustainability Forum",
+    description: "Connect with 50+ world-renowned climate experts in Kuala Lumpur. Join leaders, scientists, and innovators in shaping sustainable solutions at WFCCES 2025.",
+    type: "website",
+    
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About WFCCES - Global Climate Change & Sustainability Forum 2025",
+    description: "Join global environmental leaders in Kuala Lumpur (May 22-23, 2025). Network with 50+ experts, explore sustainable solutions, and drive climate action.",
+  },
+  alternates: {
+    canonical: "https://www.wfcces.com/contact",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  // Structured data for events
+  jsonLd: {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    name: "World Forum on Climate Change and Environmental Sustainability 2025",
+    description: "Global conference bringing together climate scientists, policymakers, and sustainability experts to address environmental challenges and promote sustainable solutions.",
+    startDate: "2025-05-22",
+    endDate: "2025-05-23",
+    location: {
+      "@type": "Place",
+      name: "Kuala Lumpur",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Kuala Lumpur",
+        addressCountry: "MY"
       }
-
-      showSuccessToast("Message sent successfully!");
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        country: "",
-        message: "",
-      });
-    } catch (error) {
-      showErrorToast(error.message);
-    } finally {
-      setIsLoading(false);
+    },
+    organizer: {
+      "@type": "Organization",
+      name: "World Forum on Climate Change and Environmental Sustainability",
+      alternateName: "WFCCES"
+    },
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock"
+    },
+    audience: {
+      "@type": "Audience",
+      audienceType: "Climate Scientists, Policymakers, Sustainability Advocates, Industry Leaders, NGOs, Students"
     }
-  };
-
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0 },
-  };
-
+  }
+};
+function page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-blue-50 dark:from-blue-900 dark:to-blue-900   text-foreground py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
-        <motion.h1
-          className="text-4xl font-bold text-center text-primary mb-12"
-          initial="hidden"
-          animate="visible"
-          variants={fadeIn}
-        >
-          Contact Us
-        </motion.h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <motion.div
-            className="space-y-8"
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            transition={{ delay: 0.2 }}
-          >
-            <Image
-              src="https://illustrations.popsy.co/blue/telephone-call.svg"
-              alt="Contact Us"
-              width={400}
-              height={300}
-              className=""
-            />
-            <div>
-              <h2 className="text-3xl font-semibold  mb-4 underline underline-offset-4 decoration-blue-500">
-                Get in Touch
-              </h2>
-              <p className="text-muted-foreground mb-4">
-              Reach out to us for inquiries, assistance, or more information about the World Forum on Climate Change and Environmental Sustainability. We&apos;re here to support you every step of the way.
-              </p>
-              <div className="space-y-2">
-                <div className="flex items-center">
-                  <Mail className="mr-2 text-primary" />
-                  <span>info@wfcces.com</span>
-                </div>
-                <div className="flex items-center">
-                  <Phone className="mr-2 text-primary" />
-                  <span>+91 82600 80050</span>
-                </div>
-                <div className="flex items-center">
-                  <MapPin className="mr-2 text-primary" />
-                  <span>DCB-330, 3rd Floor, DLF Cyber City, Patia, Bhubaneswar, ODISHA - 751024 India</span>
-                </div>
-              </div>
-            </div>
-            <div>
-              <h2 className="text-2xl font-semibold text-primary mb-4">
-                Follow Us
-              </h2>
-              <div className="flex space-x-4">
-                <a href="https://www.facebook.com/profile.php?id=61561809783777" className="text-primary hover:text-primary/80">
-                  <Facebook size={24} />
-                </a>
-                <a href="https://x.com/Zepresearch" className="text-primary hover:text-primary/80">
-                  <Twitter size={24} />
-                </a>
-                <a href="https://www.instagram.com/zepresearch/" className="text-primary hover:text-primary/80">
-                  <Instagram size={24} />
-                </a>
-                <a href="https://www.linkedin.com/company/zep-research/" className="text-primary hover:text-primary/80">
-                  <Linkedin size={24} />
-                </a>
-                <a href="https://youtube.com/@zepresearch" className="text-primary hover:text-primary/80">
-                  <Youtube size={24} />
-                </a>
-              </div>
-            </div>
-          </motion.div>
-          <motion.div
-            className="bg-white h-fit p-8 rounded-lg shadow-lg"
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            transition={{ delay: 0.4 }}
-          >
-            <h2 className="text-2xl font-semibold text-primary mb-6">
-              Send us a Message
-            </h2>
-            <form className="space-y-4" onSubmit={handleSubmit}>
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-muted-foreground mb-1"
-                >
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-muted-foreground mb-1"
-                >
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="your@email.com"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-muted-foreground mb-1"
-                >
-                  Phone no.
-                </label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  placeholder="91+ 8734628373"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="country"
-                  className="block text-sm font-medium text-muted-foreground mb-1"
-                >
-                  Country
-                </label>
-                <Input
-                  id="country"
-                  type="text"
-                  placeholder="India"
-                  value={formData.country}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-muted-foreground mb-1"
-                >
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  placeholder="Your message here..."
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <Button type="submit" className="w-full" disabled={isLoading}>
-                {isLoading ? "Sending..." : "Send Message"}
-              </Button>
-            </form>
-          </motion.div>
-        </div>
-      </div>
+    <div>
+      <ContactUs/>
     </div>
-  );
+  )
 }
+
+export default page
