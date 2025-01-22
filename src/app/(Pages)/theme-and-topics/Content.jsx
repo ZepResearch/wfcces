@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef,useState } from 'react'
 import { motion, useAnimation, useInView } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -8,17 +8,59 @@ import { Badge } from '@/components/ui/badge'
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Calendar, FileText, UserPlus, BirdIcon, File } from 'lucide-react'
 import Link from 'next/link'
+import PocketBase from 'pocketbase'
 
 export default function ThemeAndTopics() {
   const controls = useAnimation()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.1 })
+  const [importantDates, setImportantDates] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     if (isInView) {
       controls.start('visible')
     }
   }, [controls, isInView])
+
+  useEffect(() => {
+    const fetchDates = async () => {
+      try {
+        const pb = new PocketBase('https://wfcces.pockethost.io')
+        const records = await pb.collection('dates').getFullList({
+          sort: '-created',
+        })
+        
+        // Transform the records into the required format
+    
+        
+        setImportantDates(records)
+      } catch (error) {
+        console.error('Error fetching dates:', error)
+        // Fallback to default dates if there's an error
+        setImportantDates([
+          { date: "January 25th, 2025", event: "Early bird registration deadline", icon: <BirdIcon className="h-6 w-6" /> },
+          { date: "January 30th, 2025", event: "Abstract submission deadline", icon: <UserPlus className="h-6 w-6" /> },
+          { date: "February 6th, 2025", event: "Full paper submission deadline", icon: <FileText className="h-6 w-6" /> },
+          { date: "February 17th, 2025", event: "Registration deadline", icon: <File className="h-6 w-6" /> },
+        ])
+      } finally {
+        setIsLoading(false)
+      }
+    }
+
+    fetchDates()
+  }, [])
+
+  const getIconForEvent = (eventType) => {
+    const iconMap = {
+      'earlyBird': <BirdIcon className="h-6 w-6" />,
+      'abstract': <UserPlus className="h-6 w-6" />,
+      'fullPaper': <FileText className="h-6 w-6" />,
+      'registration': <File className="h-6 w-6" />
+    }
+    return iconMap[eventType] || <Calendar className="h-6 w-6" />
+  }
 
   const containerVariants = {
     hidden: { opacity: 0, y: 50 },
@@ -212,34 +254,35 @@ export default function ThemeAndTopics() {
         </motion.div>
 
         <motion.div variants={itemVariants} className="mt-12">
-          <Card className="overflow-hidden shadow-2xl bg-white/50 backdrop-blur-sm border-2 border-primary/20">
-            <CardHeader className="bg-primary text-primary-foreground p-6">
-              <CardTitle className="text-3xl flex items-center">
-                <Calendar className="mr-2 h-8 w-8" />
-                Important Dates
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-6">
-              <ul className="space-y-4">
-                {[
-                  { date: "January 25th, 2025", event: "Early bird registration deadline", icon: < BirdIcon className="h-6 w-6" /> },
-                  { date: "January 30th, 2025", event: "Abstract submission deadline", icon: <UserPlus className="h-6 w-6" /> },
-                  { date: "February 6th, 2025", event: "Full paper submission deadline", icon: <FileText className="h-6 w-6" /> },
-                  { date: "February 17th, 2025", event: "Registration deadline", icon: <File className="h-6 w-6" /> },
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center">
-                    <div className="mr-2 text-primary">
+        <Card className="overflow-hidden shadow-2xl bg-white/50 backdrop-blur-sm border-2 border-primary/20">
+          <CardHeader className="bg-primary text-primary-foreground p-6">
+            <CardTitle className="text-3xl flex items-center">
+              <Calendar className="mr-2 h-8 w-8" />
+              Important Dates
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="p-6">
+            {isLoading ? (
+              <div className="flex items-center justify-center p-4">
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+              </div>
+            ) : (
+              <ul className="flex flex-col-reverse">
+                {importantDates.map((item, index) => (
+                  <li key={index} className="flex items-center py-2">
+                    {/* <div className="mr-2 text-primary">
                       {item.icon}
-                    </div>
+                    </div> */}
                     <span className="text-lg text-muted-foreground">
-                      <strong>{item.date}:</strong> {item.event}
+                      <strong>{item.date}:</strong> {item.name}
                     </span>
                   </li>
                 ))}
               </ul>
-            </CardContent>
-          </Card>
-        </motion.div>
+            )}
+          </CardContent>
+        </Card>
+      </motion.div>
       </div>
     </motion.section>
   )
