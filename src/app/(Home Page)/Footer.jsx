@@ -61,7 +61,7 @@ export default function Footer() {
         />
         <div className="absolute inset-0 bg-black dark:bg-blue-900 bg-opacity-70 dark:bg-opacity-90"></div>
       </div>
-      <div className="container mx-auto px-4 py-12 relative z-10">
+      <div className="container mx-auto px-4 py-8 relative z-10">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="mb-8 md:mb-0 md:w-1/3">
             <Link href="/" className="mb-2 text-xl text-blue-400 inline-flex items-center space-x-1">
@@ -74,6 +74,10 @@ export default function Footer() {
               />
               <h1 className="mt-3 font-semibold">WFCCES</h1>
             </Link>
+            <div className="inline-flex justify-start items-center text-white text-xl sm:text-xl font-semibold ">
+          <Image src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1726731577/il2wr5yxd2w1sarnj3it.svg" width={100} height={40} alt="ICASEM" className=" " />
+          <span className="-ml-3">Zep Research</span> 
+          </div>
             <div className="flex space-x-4 ml-4 mb-4">
               {socialLinks.map((item) => (
                 <a
