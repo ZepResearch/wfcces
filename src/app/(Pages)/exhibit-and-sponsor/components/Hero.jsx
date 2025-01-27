@@ -24,7 +24,7 @@ export default function ExhibitionHero() {
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
           EXHIBIT IN FRONT OF THE WORLD&apos;S
         </h2>
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight underline underline-offset-8  decoration-blue-400">
+        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight  ">
           TOP CLIMATE LEADERS
         </h1>
       </div>
