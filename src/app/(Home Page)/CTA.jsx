@@ -56,7 +56,7 @@ export default function ConferenceCTASections() {
     },
     {
       title: "Venue",
-      description: "Join us at the Stockholm International Conference Center",
+      description: "Join us at the Holiday Inn Express Kuala Lumpur City Centre",
       icon: <MapPin className="w-10 h-10 mb-4 text-blue-500" />,
       link: "/venue",
     },
