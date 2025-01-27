@@ -42,14 +42,14 @@ export default function AboutUs() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="relative h-64 md:h-full"
+            className="relative h-64 md:h-full rounded-2xl overflow-hidden "
           >
             <Image
-              src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1726482086/uli2ntgqkw22vfigdtkt.png"
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?q=80&w=2084&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Animated illustration of climate change and sustainability concepts"
               layout="fill"
               objectFit="contain"
-              className="rounded-lg"
+              className=""
             />
           </motion.div>
         </div>
