@@ -127,9 +127,9 @@ export default function ContactUs() {
               </div>
             </div>
             <div>
-              <h2 className="text-2xl font-semibold text-primary mb-4">
+              <span className="text-2xl font-semibold text-primary mb-4">
                 Follow Us
-              </h2>
+              </span>
               <div className="flex space-x-4">
                 <a href="https://www.facebook.com/profile.php?id=61561809783777" className="text-primary hover:text-primary/80">
                   <Facebook size={24} />
@@ -156,9 +156,9 @@ export default function ContactUs() {
             variants={fadeIn}
             transition={{ delay: 0.4 }}
           >
-            <h2 className="text-2xl font-semibold text-primary mb-6">
+            <p className="text-2xl font-semibold text-primary mb-6">
               Send us a Message
-            </h2>
+            </p>
             <form className="space-y-4" onSubmit={handleSubmit}>
               <div>
                 <label

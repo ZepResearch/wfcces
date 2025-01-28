@@ -25,7 +25,7 @@ export default function Component() {
             animate={{ opacity: 1, y: 0 }}
             className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center"
             >
-            <h1 className="text-4xl font-bold leading-tight tracking-tighter sm:text-4xl md:text-6xl">
+            <p className="text-4xl font-bold leading-tight tracking-tighter sm:text-4xl md:text-6xl">
               Join us for the{" "}
               <span className="relative inline-block">
                 <span className="relative z-10 px-2 sm:px-4 text-white">
@@ -38,12 +38,12 @@ export default function Component() {
               </span>
               <br />
               on Climate Change and Environmental Sustainability
-            </h1>
+            </p>
             <MountainSnow className="h-8 w-8 text-blue-200 sm:h-12 sm:w-12" />
           </motion.div>
           <div className="mt-6 font-medium text-lg ">
           <h1><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><MapPin className="h-5 w-5 text-blue-700"/> Venue</span>: Kuala Lumpur, Malaysia</h1>
-          <h1><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><Calendar className="h-5 w-5 text-blue-700"/> Date</span>: May 22nd - 23rd, 2025</h1>
+          <h2><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><Calendar className="h-5 w-5 text-blue-700"/> Date</span>: May 22nd - 23rd, 2025</h2>
           </div>
         </div>
 
@@ -110,7 +110,7 @@ export default function Component() {
 
         {/* Bottom Text */}
         <div className="relative flex flex-col items-start justify-between gap-8 sm:flex-row sm:items-center">
-          <motion.h2
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -119,7 +119,7 @@ export default function Component() {
             Shaping a sustainable future
             <br />
             through knowledge and action
-          </motion.h2>
+          </motion.p>
 
           {/* Rotating Text with Center Button */}
           <div className="relative h-32 w-32">

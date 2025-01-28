@@ -214,9 +214,9 @@ export default function SponsorshipsPage() {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
             Sponsorship Opportunities
           </h1>
-          <p className="text-xl text-blue-200">
+          <h2 className="text-xl text-blue-200">
             Maximize your impact at the Climate Forum with our exclusive sponsorship packages
-          </p>
+          </h2>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

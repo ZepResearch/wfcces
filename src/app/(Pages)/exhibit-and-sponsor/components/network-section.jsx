@@ -32,7 +32,7 @@ export default function NetworkSection() {
   return (
     <section className="bg-gradient-to-b from-blue-950 via-blue-900 to-blue-950 py-24 px-4">
       <div className="container mx-auto max-w-7xl">
-        <motion.h2 
+        <motion.span
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -41,7 +41,7 @@ export default function NetworkSection() {
           WHO WILL YOU MEET AT THE
           <br />
           CLIMATE FORUM?
-        </motion.h2>
+        </motion.span>
 
         <motion.div 
           variants={container}
@@ -60,8 +60,8 @@ export default function NetworkSection() {
                 <Users2 className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h3 className="text-2xl font-bold text-white mb-2">Environmental Leaders and Industry Experts</h3>
-                <p className="text-blue-100">Where the world&apos;s leading climate scientists and sustainability experts network to drive environmental change.</p>
+                <h1 className="text-2xl font-bold text-white mb-2">Environmental Leaders and Industry Experts</h1>
+                <h2 className="text-blue-100">Where the world&apos;s leading climate scientists and sustainability experts network to drive environmental change.</h2>
               </div>
             </div>
 
@@ -104,7 +104,7 @@ export default function NetworkSection() {
                   <TreePine className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-1">Conservation Organizations</h3>
+                  <p className="text-xl font-bold text-white mb-1">Conservation Organizations</p>
                   <p className="text-sm text-blue-100">Connect with leading conservation groups and environmental protection agencies.</p>
                 </div>
               </div>
@@ -150,9 +150,9 @@ export default function NetworkSection() {
           transition={{ delay: 1 }}
           className="text-center mt-16"
         >
-          <h3 className="text-3xl font-bold text-white">
+          <p className="text-3xl font-bold text-white">
             245+ EXHIBITORS & SPONSORS
-          </h3>
+          </p>
         </motion.div>
       </div>
     </section>

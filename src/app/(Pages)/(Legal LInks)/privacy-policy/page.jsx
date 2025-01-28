@@ -93,9 +93,9 @@ export const metadata = {
 export default function PrivacyPolicyPage() {
   return (
     <div className="container mx-auto py-12 px-4 max-w-4xl">
-      <h1 className="text-4xl font-bold text-center mb-2 pb-2 underline underline-offset-4 decoration-blue-400 inline-block">
+      <span className="text-4xl font-bold text-center mb-2 pb-2 underline underline-offset-4 decoration-blue-400 inline-block">
         Privacy Policy
-      </h1>
+      </span>
       
       <Card className="mt-8 bg-white shadow-lg">
         <CardHeader className="bg-blue-600 text-white rounded-md">

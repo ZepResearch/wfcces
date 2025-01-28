@@ -19,15 +19,15 @@ export const metadata = {
     title: "Terms and Conditions - WFCCES Conference 2025",
     description: "Important terms and conditions for WFCCES conference participation, including registration rules, code of conduct, and cancellation policies.",
     type: "website",
-    url: "https://www.wfcces.com/terms-&-conditions",
+    url: "https://www.wfcces.com/terms-&-condition",
   },
   twitter: {
     card: "summary",
-    title: "WFCCES Conference - Terms and Conditions",
+    title: "WFCCES Conference - Terms and Condition",
     description: "Essential terms and conditions for participating in the World Forum on Climate Change and Environmental Sustainability.",
   },
   alternates: {
-    canonical: "https://www.wfcces.com/terms-&-conditions",
+    canonical: "https://www.wfcces.com/terms-&-condition",
   },
   robots: {
     index: true,
@@ -83,7 +83,7 @@ export const metadata = {
         name: "WFCCES Conference 2025 Registration",
         description: "Registration for the World Forum on Climate Change and Environmental Sustainability Conference"
       },
-      termsOfService: "https://www.wfcces.com/terms-&-conditions"
+      termsOfService: "https://www.wfcces.com/terms-&-condition"
     },
     organization: {
       "@type": "Organization",

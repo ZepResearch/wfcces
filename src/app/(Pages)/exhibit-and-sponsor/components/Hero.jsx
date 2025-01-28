@@ -21,12 +21,12 @@ export default function ExhibitionHero() {
     <section className="relative overflow-hidden bg-gradient-to-b from-blue-950 via-blue-900 to-blue-950 text-white py-16">
       {/* Header */}
       <div className="container mx-auto text-center mb-16">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2">
           EXHIBIT IN FRONT OF THE WORLD&apos;S
-        </h2>
-        <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight  ">
-          TOP CLIMATE LEADERS
         </h1>
+        <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight  ">
+          TOP CLIMATE LEADERS
+        </h2>
       </div>
 
       {/* Main Content Grid */}

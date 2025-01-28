@@ -87,16 +87,16 @@ export default function CancellationPolicy() {
         </CardHeader>
         <CardContent className="p-8">
           <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-blue-600 mb-4">Overview</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <h1 className="text-2xl font-semibold text-blue-600 mb-4">Overview</h1>
+            <h2 className="text-gray-700 leading-relaxed">
               We understand that plans can change. Our cancellation policy ensures fairness and clarity for all participants. Please review this policy carefully before registering for the World Forum on Climate Change and Environmental Sustainability (WFCCES).
-            </p>
+            </h2>
           </section>
 
           <Separator className="my-8" />
 
           <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-blue-600 mb-6">Cancellation Fees</h2>
+            <p className="text-2xl font-semibold text-blue-600 mb-6">Cancellation Fees</p>
             <Table>
               <TableHeader>
                 <TableRow>
@@ -124,7 +124,7 @@ export default function CancellationPolicy() {
           <Separator className="my-8" />
 
           <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-blue-600 mb-4">How to Cancel</h2>
+            <p className="text-2xl font-semibold text-blue-600 mb-4">How to Cancel</p>
             <p className="text-gray-700 mb-4 leading-relaxed">To cancel your registration, please follow these steps:</p>
             <ol className="list-decimal list-inside text-gray-700 space-y-2 leading-relaxed">
               <li>Log in to your WFCCES conference account.</li>
@@ -138,7 +138,7 @@ export default function CancellationPolicy() {
           <Separator className="my-8" />
 
           <section className="mb-10">
-            <h2 className="text-2xl font-semibold text-blue-600 mb-4">Important Note</h2>
+            <p className="text-2xl font-semibold text-blue-600 mb-4">Important Note</p>
             <p className="text-gray-700 leading-relaxed">
               All cancellation requests must be submitted through your WFCCES conference account. Refunds will be processed to the original form of payment within 10 business days of approval.
             </p>
@@ -147,7 +147,7 @@ export default function CancellationPolicy() {
           <Separator className="my-8" />
 
           <section>
-            <h2 className="text-2xl font-semibold text-blue-600 mb-4">Contact Us</h2>
+            <p className="text-2xl font-semibold text-blue-600 mb-4">Contact Us</p>
             <p className="text-gray-700 leading-relaxed mb-2">
               For any questions about our cancellation policy or assistance with the process, please reach out to our support team.
             </p>

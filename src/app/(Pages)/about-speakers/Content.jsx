@@ -67,7 +67,7 @@ export default function SpeakersPage() {
         >
           Conference Speakers
         </motion.h1>
-
+<h2></h2>
         {categories.map((category, index) => (
           speakersByCategory[category] && speakersByCategory[category].length > 0 && (
             <motion.section 
@@ -77,7 +77,7 @@ export default function SpeakersPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
-              <h2 className="text-2xl font-semibold text-blue-600 mb-6">{category}</h2>
+              <p className="text-2xl font-semibold text-blue-600 mb-6">{category}</p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {speakersByCategory[category].map((speaker) => (
                   <Card key={speaker.id} className="hover:shadow-lg transition-shadow duration-300">

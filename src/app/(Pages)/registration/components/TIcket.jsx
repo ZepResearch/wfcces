@@ -133,9 +133,9 @@ export default function Ticket() {
   return (
     <div className="min-h-full bg-background text-foreground py-12 px-4">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center mb-12 underline decoration-wavy decoration-blue-500">
+        <span className="text-4xl font-bold text-center mb-12 underline decoration-wavy decoration-blue-500">
           Choose Your Experience
-        </h1>
+        </span>
 
         <div className="space-y-8">
           {tickets.map((ticket, index) => (

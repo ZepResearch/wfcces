@@ -42,9 +42,9 @@ export default function ScientificCommittee() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
+          <p className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
             Scientific Committee
-          </h2>
+          </p>
         </motion.div>
         <ul
           role="list"

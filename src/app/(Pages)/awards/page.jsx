@@ -74,9 +74,9 @@ export default function AwardsPage() {
       <span className="text-5xl mx-auto font-bold text-center mb-2 pb-2 underline underline-offset-4 decoration-blue-400">
         Celebrating Excellence
       </span>
-      <p className="text-xl text-blue-400  mb-6 text-center drop-shadow-sm">
+      <h2 className="text-xl text-blue-400  mb-6 text-center drop-shadow-sm">
         in Climate Change and Environmental Sustainability
-      </p>
+      </h2>
       <p className="text-gray-700 leading-relaxed mb-12 text-center max-w-3xl mx-auto">
         At the World Forum on Climate Change and Environmental Sustainability (WFCCES), 
         we are dedicated to recognizing groundbreaking research and exceptional presentation skills. 
