@@ -71,9 +71,9 @@ export const metadata = {
 export default function AwardsPage() {
   return (
     <div className="container mx-auto py-12 px-4 max-w-5xl">
-      <h1 className="text-5xl mx-auto font-bold text-center mb-2 pb-2 underline underline-offset-4 decoration-blue-400">
+      <span className="text-5xl mx-auto font-bold text-center mb-2 pb-2 underline underline-offset-4 decoration-blue-400">
         Celebrating Excellence
-      </h1>
+      </span>
       <p className="text-xl text-blue-400  mb-6 text-center drop-shadow-sm">
         in Climate Change and Environmental Sustainability
       </p>

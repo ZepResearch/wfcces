@@ -28,7 +28,7 @@ export const metadata = {
     description: "Join global environmental leaders in Kuala Lumpur (May 22-23, 2025). Network with 50+ experts, explore sustainable solutions, and drive climate action.",
   },
   alternates: {
-    canonical: "https://www.wfcces.com/about-organizers",
+    canonical: "https://www.wfcces.com/schedule",
   },
   robots: {
     index: true,
