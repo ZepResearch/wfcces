@@ -104,9 +104,9 @@ export default function TermsAndConditionsPage() {
           <CardTitle className="text-2xl">Welcome to WFCCES</CardTitle>
         </CardHeader>
         <CardContent className="p-6">
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <h2 className="text-gray-700 leading-relaxed mb-6">
             By registering for our conference or using our website, you agree to these Terms and Conditions. Please read them carefully.
-          </p>
+          </h2>
           
           <Accordion type="single" collapsible className="w-full">
             <AccordionItem value="registration">
@@ -171,7 +171,7 @@ export default function TermsAndConditionsPage() {
           </Accordion>
 
           <div className="mt-8 border-t pt-6">
-            <h2 className="text-xl font-semibold text-blue-600 mb-4">Contact Us</h2>
+            <p className="text-xl font-semibold text-blue-600 mb-4">Contact Us</p>
             <p className="text-gray-700">
               For any questions regarding these Terms and Conditions, contact us at:
             </p>

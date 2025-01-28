@@ -67,7 +67,7 @@ export default function SpeakersPage() {
         >
           Conference Speakers
         </motion.h1>
-<h2></h2>
+<h2>.</h2>
         {categories.map((category, index) => (
           speakersByCategory[category] && speakersByCategory[category].length > 0 && (
             <motion.section 

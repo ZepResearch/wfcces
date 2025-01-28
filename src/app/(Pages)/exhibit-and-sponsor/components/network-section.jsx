@@ -60,8 +60,8 @@ export default function NetworkSection() {
                 <Users2 className="w-8 h-8 text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-white mb-2">Environmental Leaders and Industry Experts</h1>
-                <h2 className="text-blue-100">Where the world&apos;s leading climate scientists and sustainability experts network to drive environmental change.</h2>
+                <p className="text-2xl font-bold text-white mb-2">Environmental Leaders and Industry Experts</p>
+                <p className="text-blue-100">Where the world&apos;s leading climate scientists and sustainability experts network to drive environmental change.</p>
               </div>
             </div>
 

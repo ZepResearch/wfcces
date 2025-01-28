@@ -43,7 +43,7 @@ export default function Component() {
           </motion.div>
           <div className="mt-6 font-medium text-lg ">
           <h1><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><MapPin className="h-5 w-5 text-blue-700"/> Venue</span>: Kuala Lumpur, Malaysia</h1>
-          <h2><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><Calendar className="h-5 w-5 text-blue-700"/> Date</span>: May 22nd - 23rd, 2025</h2>
+          <p><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><Calendar className="h-5 w-5 text-blue-700"/> Date</span>: May 22nd - 23rd, 2025</p>
           </div>
         </div>
 
