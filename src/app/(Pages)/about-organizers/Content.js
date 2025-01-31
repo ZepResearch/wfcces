@@ -82,7 +82,7 @@ export default function AboutCompany() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Our mission is to advance the field of tourism and hospitality management by providing a platform for knowledge exchange, networking, and collaboration. We strive to address current challenges, explore emerging opportunities, and shape the future of the industry through insightful discussions and presentations.
+                  Our mission is to advance the field of Climate Change and Environmental Sustainability by providing a platform for knowledge exchange, networking, and collaboration. We strive to address current challenges, explore emerging opportunities, and shape the future of the industry through insightful discussions and presentations.
                 </p>
               </CardContent>
             </Card>
