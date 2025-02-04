@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { motion } from "framer-motion";
-import { ArrowRight, CalculatorIcon, Calendar, LocateIcon, MapPin, MountainSnow } from "lucide-react";
+import { ArrowRight, CalculatorIcon, Calendar, Headphones, LocateIcon, MapPin, MountainSnow } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import Banner from "./Banner";
@@ -13,6 +13,29 @@ export default function Component() {
           <>
       <Banner/>
     <section className="relative w-full bg-white px-4 py-12">
+    <motion.div
+        className="md:absolute top-72 sm:right-48 right-5 z-20 bg-slate-100/90 backdrop-blur-sm text-black p-4 rounded-lg shadow-lg w-64 md:my-0 my-4 md:ml-0 ml-12"
+        initial={{ opacity: 0, x: 100 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ delay: 1, duration: 0.5 }}
+      >
+        <h3 className="font-bold text-lg mb-2">Hybrid Conference</h3>
+        <p className="text-sm mb-2">Experience the conference your way:</p>
+        <ul className="list-disc list-inside text-sm">
+          <li>Attend in person in Malaysia</li>
+          <li>Join virtually from anywhere</li>
+        </ul>
+        <div className="mt-3 flex items-center justify-between text-xs">
+          <span className="flex items-center">
+            <MapPin className="w-4 h-4 mr-1" />
+            Physical
+          </span>
+          <span className="flex items-center">
+            <Headphones className="w-4 h-4 mr-1" />
+            Virtual
+          </span>
+        </div>
+      </motion.div>
       <div className="mx-auto max-w-7xl">
         {/* Header */}
         <div className="relative mb-8">
