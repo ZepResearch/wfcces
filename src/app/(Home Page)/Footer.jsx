@@ -16,8 +16,10 @@ const footerSections = [
     title: "Call for Papers",
     links: [
       { name: "Themes and Topics", href: "/theme-and-topics" },
-      { name: "Submission Guidelines", href: "/submission-guidelines" },
-      { name: "Presentation Formats", href: "/presentation-formats" },
+      { name: "Submission Guidelines", href: "/papers-format" },
+      { name: "Presentation Formats", href: "/mode-of-presentation" },
+      { name: "Conference schedule", href: "/schedule" },
+
     ],
   },
   {
