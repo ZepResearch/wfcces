@@ -25,7 +25,7 @@ const DynamicTimeline = () => {
       try {
         const pb = new PocketBase('https://wfcces.pockethost.io');
         const records = await pb.collection('dates').getFullList({
-          sort: '-created',
+          sort: 'created',
           requestKey: null
         });
 
@@ -41,7 +41,7 @@ const DynamicTimeline = () => {
           icon: iconMapping[record.type] || iconMapping.default
         })).reverse();
 
-        setTimelineData(formattedData);
+        setTimelineData(records);
         setLoading(false);
       } catch (err) {
         setError('Failed to fetch timeline data');
