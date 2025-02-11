@@ -16,17 +16,24 @@ export function CCavenuePaymentForm({ isOpen, onClose, ticketName, amount, onSub
     billing_tel: '',
   });
 
+  const [customAmount, setCustomAmount] = useState('');
+
   const TAX_RATE = 0.06; // 6% tax rate
-  const taxAmount = amount * TAX_RATE;
-  const totalAmount = amount + taxAmount;
+  const baseAmount = customAmount ? parseFloat(customAmount) : amount;
+  const taxAmount = baseAmount * TAX_RATE;
+  const totalAmount = baseAmount + taxAmount;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const handleCustomAmountChange = (e) => {
+    setCustomAmount(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(formData);
+    onSubmit({ ...formData, amount: baseAmount });
   };
 
   return (
@@ -74,10 +81,21 @@ export function CCavenuePaymentForm({ isOpen, onClose, ticketName, amount, onSub
             <Label htmlFor="billing_tel">Phone Number</Label>
             <Input id="billing_tel" name="billing_tel" type="tel" required onChange={handleChange} />
           </div>
+          <div>
+            <Label htmlFor="custom_amount">Others</Label>
+            <Input 
+              id="custom_amount"
+              type="number"
+              step="0.01"
+              value={customAmount}
+              onChange={handleCustomAmountChange}
+              placeholder={`Default: $${amount.toFixed(2)}`}
+            />
+          </div>
           <div className="mt-6 space-y-2">
             <div className="flex justify-between">
               <Label>Subtotal:</Label>
-              <div className="font-medium">${amount.toFixed(2)}</div>
+              <div className="font-medium">${baseAmount.toFixed(2)}</div>
             </div>
             <div className="flex justify-between">
               <Label>Tax (6%):</Label>
@@ -88,7 +106,9 @@ export function CCavenuePaymentForm({ isOpen, onClose, ticketName, amount, onSub
               <div className="text-2xl font-bold">${totalAmount.toFixed(2)}</div>
             </div>
           </div>
-          <Button type="submit" className="w-full mt-6">Proceed to Payment</Button>
+          <Button type="submit" className="w-full mt-6">
+            Proceed to Payment
+          </Button>
         </form>
       </DialogContent>
     </Dialog>
