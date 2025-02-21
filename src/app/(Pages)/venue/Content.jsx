@@ -88,7 +88,7 @@ export default function VenuePage() {
               <CardContent>
                 <div className="flex items-center mb-4 font-semibold text-gray-700">
                   <MapPin className="mr-2 text-blue-500" />
-                  <p>Holiday Inn Express Kuala Lumpur City Centre, an IHG Hotel,Kuala Lumpur, Malaysia</p>
+                  <p>Holiday Inn Express, Kuala Lumpur City Centre, an IHG Hotel,Kuala Lumpur, Malaysia</p>
                 </div>
                 <p className="text-gray-600 mb-4">
                   The Kuala Lumpur city Centre is a world-class facility
