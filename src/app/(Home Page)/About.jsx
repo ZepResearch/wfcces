@@ -15,7 +15,8 @@ export default function AboutUs() {
               Our Mission is Global Climate Action
             </h2>
             <p className="text-gray-600">
-              The International Conference on Climate Change & Sustainability
+            World Forum
+            on Climate Change and Environmental Sustainability
               was founded by Dr. Emma Rhodes, a renowned climate scientist, and
               Mark Chen, a sustainability advocate. Their shared vision was to
               create a global platform for experts, policymakers, and innovators
