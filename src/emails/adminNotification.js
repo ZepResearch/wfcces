@@ -4,7 +4,7 @@ export const adminNotificationTemplate = (data) => `
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Paper Submission - International Conference on Tourism Management & Hospitality</title>
+    <title>New Paper Submission - World Forum on Climate Change and Environmental Sustainability</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         
@@ -15,7 +15,7 @@ export const adminNotificationTemplate = (data) => `
             max-width: 600px;
             margin: 0 auto;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f0f8ff;
         }
         .container {
             background-color: #ffffff;
@@ -25,7 +25,7 @@ export const adminNotificationTemplate = (data) => `
             margin: 20px;
         }
         .header {
-            background-color: #FF8C00;
+            background-color: #1e90ff;
             padding: 30px 20px;
             text-align: center;
             color: white;
@@ -48,7 +48,7 @@ export const adminNotificationTemplate = (data) => `
         }
         .field-label {
             font-weight: 600;
-            color: #FF8C00;
+            color: #1e90ff;
             display: block;
             margin-bottom: 5px;
             font-size: 14px;
@@ -58,13 +58,13 @@ export const adminNotificationTemplate = (data) => `
         .field-value {
             font-size: 16px;
             color: #333;
-            background-color: #f9f9f9;
+            background-color: #f0f8ff;
             padding: 10px;
             border-radius: 4px;
-            border-left: 3px solid #FF8C00;
+            border-left: 3px solid #1e90ff;
         }
         .pdf-link {
-            color: #FF8C00;
+            color: #1e90ff;
             text-decoration: none;
             font-weight: 600;
         }
@@ -72,7 +72,7 @@ export const adminNotificationTemplate = (data) => `
             text-decoration: underline;
         }
         .footer {
-            background-color: #333;
+            background-color: #1e90ff;
             color: #fff;
             text-align: center;
             padding: 20px;
@@ -90,7 +90,7 @@ export const adminNotificationTemplate = (data) => `
     <div class="container">
         <div class="header">
             <h1>New Paper Submission</h1>
-            <p>International Conference on Tourism Management & Hospitality</p>
+            <p>World Forum on Climate Change and Environmental Sustainability</p>
         </div>
         <div class="submission-details">
             <div class="field">
@@ -142,10 +142,8 @@ export const adminNotificationTemplate = (data) => `
         </div>
     </div>
     <div class="footer">
-        <p>Thank you for your submission to the International Conference on Tourism Management & Hospitality!</p>
+        <p>New paper submission received for the World Forum on Climate Change and Environmental Sustainability!</p>
     </div>
 </body>
 </html>
-
-
 `;
