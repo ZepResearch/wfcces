@@ -12,7 +12,7 @@ export const userConfirmationTemplate = (data) => `
             font-family: 'Roboto', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: #f4f4f4;
+            background-color: #f0f8ff;
             margin: 0;
             padding: 0;
         }
@@ -25,7 +25,7 @@ export const userConfirmationTemplate = (data) => `
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         .header {
-            background-color: #4a90e2;
+            background-color: #1e90ff;
             color: #ffffff;
             padding: 30px;
             text-align: center;
@@ -44,8 +44,8 @@ export const userConfirmationTemplate = (data) => `
             margin-bottom: 20px;
         }
         .submission-details {
-            background-color: #f8f9fa;
-            border-left: 4px solid #4a90e2;
+            background-color: #f0f8ff;
+            border-left: 4px solid #1e90ff;
             padding: 20px;
             margin-top: 20px;
             margin-bottom: 20px;
@@ -53,7 +53,7 @@ export const userConfirmationTemplate = (data) => `
         .submission-details h2 {
             margin-top: 0;
             font-size: 18px;
-            color: #4a90e2;
+            color: #1e90ff;
         }
         .submission-details ul {
             list-style-type: none;
@@ -68,12 +68,12 @@ export const userConfirmationTemplate = (data) => `
             color: #555;
         }
         .footer {
-            background-color: #f8f9fa;
+            background-color: #f0f8ff;
             color: #666;
             text-align: center;
             padding: 20px;
             font-size: 14px;
-            border-top: 1px solid #e9ecef;
+            border-top: 1px solid #b0e0e6;
         }
         @media only screen and (max-width: 600px) {
             .container {
@@ -86,12 +86,12 @@ export const userConfirmationTemplate = (data) => `
 <body>
     <div class="container">
         <div class="header">
-            <h1>Paper Submission Confirmation</h1>
+            <h1>World Forum on Climate Change and Environmental Sustainability</h1>
         </div>
         <div class="content">
             <p class="greeting">Dear ${data.authorName},</p>
-            <p>Thank you for submitting your paper. We are pleased to confirm that we have received your submission titled:</p>
-            <p style="font-weight: 500; font-style: italic; color: #4a90e2;">"${data.paperTitle}"</p>
+            <p>Thank you for submitting your research paper to the World Forum on Climate Change and Environmental Sustainability (WFCCES). We are pleased to confirm that we have received your submission titled:</p>
+            <p style="font-weight: 500; font-style: italic; color: #1e90ff;">"${data.paperTitle}"</p>
             
             <div class="submission-details">
                 <h2>Submission Details</h2>
@@ -102,18 +102,14 @@ export const userConfirmationTemplate = (data) => `
                 </ul>
             </div>
             
-            <p>Our team will carefully review your submission and contact you within 24-48 hours with further information.</p>
+            <p>Our scientific review committee will carefully evaluate your submission and provide feedback within 5-7 business days. We appreciate your contribution to addressing critical environmental challenges.</p>
             
-            
-            
-            <p>Best regards,<br>ICSTHM Team</p>
+            <p>Best regards,<br>WFCCES Conference Organizing Committee</p>
         </div>
         <div class="footer">
-            <p>This is an automated message. Please do not reply to this email.</p>
+            <p>This is an automated confirmation. Please do not reply to this email.</p>
         </div>
     </div>
 </body>
 </html>
-
-
 `;
