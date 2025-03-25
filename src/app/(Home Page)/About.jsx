@@ -10,21 +10,12 @@ export default function AboutUs() {
       <div className="container max-w-7xl mx-auto px-4">
         <div className="grid gap-8 md:grid-cols-2">
           <div className="space-y-6">
-            <h3 className="text-lg font-semibold text-blue-600">About Us</h3>
+            {/* <h3 className="text-lg font-semibold text-blue-600">About Us</h3> */}
             <h2 className="text-4xl font-bold leading-tight tracking-tighter md:text-5xl">
-              Our Mission is Global Climate Action
+            About The Conference 
             </h2>
             <p className="text-gray-600">
-            World Forum
-            on Climate Change and Environmental Sustainability
-              was founded by Dr. Emma Rhodes, a renowned climate scientist, and
-              Mark Chen, a sustainability advocate. Their shared vision was to
-              create a global platform for experts, policymakers, and innovators
-              to address the urgent challenges of climate change. United by
-              their belief in the power of collaborative action, they embarked
-              on a journey to build this conference. With relentless dedication,
-              they gathered a team of experts and launched this innovative
-              event,
+            The World Forum on Climate Change and Environmental Sustainability is a global platform that brings together experts, policymakers, researchers, and industry leaders to discuss and address pressing environmental challenges. The forum focuses on key issues such as climate change mitigation and adaptation, renewable energy, sustainable development, biodiversity conservation, and innovative environmental solutions.
             </p>
             <Button size="sm" className=" italic">
               <Link href="/about-conference">Know More</Link>
