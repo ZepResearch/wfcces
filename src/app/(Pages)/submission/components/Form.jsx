@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { Cloudinary } from "@cloudinary/url-gen";
-// import "react-toastify/dist/ReactToastify.css";/
-// import "@/styles/toast.css";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -22,7 +20,6 @@ import { toast } from "react-toastify";
 import { useCustomToast } from "@/hooks/useCustomToast";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-
 
 const SelectField = ({ label, name, value, onValueChange, options, error }) => (
   <div className="space-y-2">
@@ -50,6 +47,7 @@ const SelectField = ({ label, name, value, onValueChange, options, error }) => (
     )}
   </div>
 );
+
 const cld = new Cloudinary({
   cloud: {
     cloudName: "dwlhesiyi",
@@ -63,7 +61,8 @@ export default function SubmitForm() {
   const { showSuccessToast, showErrorToast } = useCustomToast();
   const [formErrors, setFormErrors] = useState({
     presentationType: '',
-    conferenceSource: ''
+    conferenceSource: '',
+    pdfFile: ''
   });
   const [formData, setFormData] = useState({
     authorName: "",
@@ -92,12 +91,16 @@ export default function SubmitForm() {
   };
   const onDrop = (acceptedFiles) => {
     setPdfFile(acceptedFiles[0]);
+    setFormErrors(prev => ({ ...prev, pdfFile: '' }));
   };
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
-    accept: { "application/pdf": [".pdf"] ,'application/msword': ['.doc'],
-  'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx'],},
+    accept: { 
+      "application/pdf": [".pdf"], 
+      'application/msword': ['.doc'],
+      'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx'],
+    },
     multiple: false,
   });
 
@@ -115,22 +118,23 @@ export default function SubmitForm() {
         }
       );
       const data = await response.json();
-      // console.log("Cloudinary response:", data);
       return data.secure_url;
     } catch (error) {
-      //  console.error("Error uploading to Cloudinary:", error);
       throw error;
     }
   };
+
   const validateForm = () => {
     const errors = {
       presentationType: !formData.presentationType ? 'Please select a presentation type' : '',
-      conferenceSource: !formData.conferenceSource ? 'Please select how you learned about the conference' : ''
+      conferenceSource: !formData.conferenceSource ? 'Please select how you learned about the conference' : '',
+      pdfFile: !pdfFile ? 'Please upload a PDF file' : ''
     };
     
     setFormErrors(errors);
     return !Object.values(errors).some(error => error);
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validateForm()) {
@@ -190,17 +194,16 @@ export default function SubmitForm() {
         }
       );
     } catch (error) {
-      // console.error("Error submitting form:", error);
       showErrorToast(
         error.message || "Error submitting form. Please try again. ❌"
       );
     }
   };
+
   const presentationTypeOptions = [
     { value: "Poster", label: "Poster" },
     { value: "Oral", label: "Oral" },
     { value: "Virtual", label: "Virtual" }
-
   ];
 
   const conferenceSourceOptions = [
@@ -214,6 +217,7 @@ export default function SubmitForm() {
     { value: "linkedin", label: "LinkedIn" },
     { value: "others", label: "Others" }
   ];
+
   return (
     <section className="py-12 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-orange-900 dark:to-yellow-900">
       <div className="container mx-auto px-4">
@@ -255,20 +259,14 @@ export default function SubmitForm() {
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="number">Phone / Whatsapp.no</Label>
-                    {/* <Input
+                    <PhoneInput 
                       id="number"
                       name="number"
+                      className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
+                      placeholder="Enter phone number"
                       value={formData.number}
-                      onChange={handleChange}
-                      required
-                    /> */}
-                    <PhoneInput 
-                     id="number"
-                      name="number"
-                    className="flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-base shadow-sm transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 md:text-sm"
-                    placeholder="Enter phone number"
-                    value={formData.number}
-                    onChange={handlePhoneChange}/>
+                      onChange={handlePhoneChange}
+                    />
                   </div>
                   <div className="space-y-2">
                     <Label htmlFor="email">Email address</Label>
@@ -333,11 +331,14 @@ export default function SubmitForm() {
                     />
                   </div>
                 </div>
+                
                 <div className="space-y-2">
-                  <Label>Upload your paper</Label>
+                  <Label>Upload your paper <span className="text-red-500">*</span></Label>
                   <div
                     {...getRootProps()}
-                    className="border-2 border-dashed border-gray-300 rounded-md p-4 text-center cursor-pointer"
+                    className={`border-2 border-dashed rounded-md p-4 text-center cursor-pointer ${
+                      formErrors.pdfFile ? 'border-red-500' : 'border-gray-300'
+                    }`}
                   >
                     <input {...getInputProps()} />
                     {isDragActive ? (
@@ -357,7 +358,11 @@ export default function SubmitForm() {
                       </span>
                     </p>
                   )}
+                  {formErrors.pdfFile && (
+                    <p className="text-sm text-red-500">{formErrors.pdfFile}</p>
+                  )}
                 </div>
+
                 <div className="space-y-2">
                   <Label>Paper Type</Label>
                   <RadioGroup
@@ -377,19 +382,21 @@ export default function SubmitForm() {
                     </div>
                   </RadioGroup>
                 </div>
+
                 <SelectField
-        label="Presentation Type"
-        name="presentationType"
-        value={formData.presentationType}
-        onValueChange={(value) =>
-          setFormData((prev) => ({
-            ...prev,
-            presentationType: value,
-          }))
-        }
-        options={presentationTypeOptions}
-        error={formErrors.presentationType}
-      />
+                  label="Presentation Type"
+                  name="presentationType"
+                  value={formData.presentationType}
+                  onValueChange={(value) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      presentationType: value,
+                    }))
+                  }
+                  options={presentationTypeOptions}
+                  error={formErrors.presentationType}
+                />
+
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
@@ -400,19 +407,21 @@ export default function SubmitForm() {
                     rows={4}
                   />
                 </div>
+
                 <SelectField
-        label="How this conference came to be known to you"
-        name="conferenceSource"
-        value={formData.conferenceSource}
-        onValueChange={(value) =>
-          setFormData((prev) => ({
-            ...prev,
-            conferenceSource: value,
-          }))
-        }
-        options={conferenceSourceOptions}
-        error={formErrors.conferenceSource}
-      />
+                  label="How this conference came to be known to you"
+                  name="conferenceSource"
+                  value={formData.conferenceSource}
+                  onValueChange={(value) =>
+                    setFormData((prev) => ({
+                      ...prev,
+                      conferenceSource: value,
+                    }))
+                  }
+                  options={conferenceSourceOptions}
+                  error={formErrors.conferenceSource}
+                />
+
                 <Button type="submit" className="w-full">
                   Submit Paper
                 </Button>
