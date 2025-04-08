@@ -102,7 +102,7 @@ The World Forum on Climate Change and Environmental Sustainability aims to serve
           className="relative"
         >
           <Image
-            src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1731925299/gakro04fi0mwbjvgqesk.avif"
+            src="/assets/objective.webp"
             alt="Conference theme illustration"
             width={800}
             height={700}

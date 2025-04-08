@@ -79,7 +79,7 @@ export default function Component() {
           >
             <Image
               className=" inset-0 "
-              src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1731951726/kpz0y7pi3rmfdofxqvxi.svg"
+              src="/assets/venueCta.svg"
               alt=""
               width={400}
               height={400}

@@ -115,7 +115,7 @@ export default function ConferenceCTASections() {
             </motion.div>
             <motion.div variants={itemVariants}>
               <Image
-                src="https://res.cloudinary.com/dtsuvx8dz/image/upload/v1714292838/xpfwjplsj81rkrkndvac.png"
+                src="/assets/cta.webp"
                 alt="Conference Image"
                 height={300}
                 width={350}

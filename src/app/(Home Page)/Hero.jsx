@@ -81,13 +81,13 @@ export default function Component() {
           
         </div>
           <div className="overflow-hidden rounded-3xl">
-            <Image
-              src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1731911779/tdeykvmx5cg106az0vvy.avif"
+            <img
+              src="assets/hero.webp"
               alt="Conference hall with sustainability theme"
               width={1200}
               height={600}
               className="h-[300px] w-full object-cover sm:h-[400px]"
-              priority
+              
               />
           </div>
 

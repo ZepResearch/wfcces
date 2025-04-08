@@ -40,21 +40,21 @@ export default function VenuePage() {
       type: "Observatory",
       icon: Building,
       description: "Standing tall at 421 meters, the KL Tower is one of the city's most distinctive architectural landmarks. This telecommunications and broadcasting tower offers visitors the highest viewing deck in the city at its Observation Deck. The tower's revolving restaurant, Atmosphere 360, provides a unique dining experience with panoramic views of the city. The surrounding KL Tower Mini Zoo and KL Forest Eco Park add to the attraction, making it a perfect destination for both nature lovers and city enthusiasts.",
-      image: "https://res.cloudinary.com/dtsuvx8dz/image/upload/v1734587689/samples/n2rjdoungblxvjhrnh1y.jpg",
+      image: "https://images.unsplash.com/photo-1704959273930-b2d65db08ba2?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Lake Gardens (Perdana Botanical Gardens)",
       type: "Park",
       icon: Leaf,
       description: "The Lake Gardens, also known as Perdana Botanical Gardens, is Kuala Lumpur's oldest public park, spanning over 91 hectares of green space. This verdant oasis features themed gardens, including an Orchid Garden with over 800 species, a Hibiscus Garden showcasing Malaysia's national flower, and a Bird Park housing hundreds of species. The park's centerpiece is a large lake surrounded by walking paths, perfect for morning jogs or afternoon strolls. Various monuments and museums within the park grounds make it a cultural and historical destination as well.",
-      image: "https://res.cloudinary.com/dtsuvx8dz/image/upload/v1734587755/samples/szdajs1kify6lm30hp82.jpg",
+      image: "https://images.unsplash.com/photo-1685656549939-8567175e0eed?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       name: "Pavilion KL",
       type: "Shopping Mall",
       icon: ShoppingBag,
       description: "Pavilion KL is a premier shopping destination located in the heart of Bukit Bintang. This award-winning mall houses over 700 retail outlets across 1.37 million square feet of retail space. From luxury boutiques to local brands, the mall caters to all shopping preferences. Its iconic Crystal Fountain at the main entrance has become a popular meeting point. The mall's Gourmet Emporium offers an extensive selection of local and international dining options. Regular events, festivities, and exhibitions make Pavilion KL not just a shopping center but a cultural hub.",
-      image: "https://res.cloudinary.com/dtsuvx8dz/image/upload/v1734587885/samples/awmpd2je1koabowbntdi.webp",
+      image: "https://images.unsplash.com/photo-1553331624-011f5178d6eb?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
   ];
 

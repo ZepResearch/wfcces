@@ -60,7 +60,7 @@ export default function AboutUs() {
           </div>
           <div className="relative h-[400px] overflow-hidden rounded-lg md:h-full">
             <Image
-              src="https://res.cloudinary.com/dwlhesiyi/image/upload/v1731934180/pttjzj2b7uebhimhhfbi.svg"
+              src="/assets/about.svg"
               alt="Conference founders discussing climate action"
               layout="fill"
               objectFit="cover"
