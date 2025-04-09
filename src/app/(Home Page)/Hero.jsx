@@ -92,22 +92,25 @@ export default function Component() {
           </div>
 
           {/* Stats Card */}
-          <Card className="mx-4 relative z-10 -mt-16 border-none bg-white p-4 shadow-lg sm:absolute sm:left-8 sm:top-1/2 sm:mt-20 sm:w-72 sm:p-6">
-            <div className="space-y-2 sm:space-y-3">
-              <div className="flex items-baseline gap-2">
-                <span className="text-3xl font-bold text-blue-600 italic sm:text-4xl">
-                  50+
-                </span>
-                <span className="text-base text-muted-foreground sm:text-lg italic">
-                  Speakers
-                </span>
-              </div>
-              <p className="text-xs text-muted-foreground sm:text-sm">
-                Join over 50 world-renowned experts and thought leaders in
-                climate science, policy, and sustainable technologies.
-              </p>
-            </div>
-          </Card>
+  
+    <Card className="mx-4 relative z-10 -mt-16 border-none bg-slate-100    shadow-lg drop-shadow-xl sm:absolute sm:left-8 sm:top-1/2 sm:mt-20 sm:w-72 ">
+      <div className="">
+        <div className="flex items-baseline ">
+          <div className="flex flex-col items-center w-full">
+            <Image
+              src="/lincoln-logo.png"
+              alt="Lincoln University College"
+              width={580}
+              height={90}
+              className="object-contain "
+            />
+         </div>
+        </div>
+        <div className=" mt-2  bg-slate-100">
+          <p className="text-center  text-red-500 font-bold">OUR CO-HOST</p>
+        </div>
+      </div>
+    </Card>
           
 
           {/* Description Card */}
