@@ -6,6 +6,7 @@ import { ToastProvider } from "@/components/ui/ToastProvider";
 import TawkToChat from "@/components/TawkToChat";
 import { FloatingWhatsAppButton } from "@/components/whatsapp";
 import Script from "next/script";
+import { LineMessengerButton } from "./(Home Page)/line-messenger-button";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -75,7 +76,8 @@ export default function RootLayout({ children }) {
       <Footer/>
       <ToastProvider/>
       <TawkToChat/>
-       <FloatingWhatsAppButton phoneNumber="8260080050" message="How can we assist you?"/>
+      <LineMessengerButton/>
+       {/* <FloatingWhatsAppButton phoneNumber="8260080050" message="How can we assist you?"/> */}
       </body>
     </html>
   );
