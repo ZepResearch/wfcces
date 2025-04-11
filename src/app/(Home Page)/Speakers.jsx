@@ -120,7 +120,7 @@ export default function SpeakerSection() {
         setLoading(true);
         // Fetch all speakers
         const records = await pb.collection('speakers').getFullList({
-          sort: 'name',
+          sort: '-order',
           expand: 'image', // Expand the image relation if needed
           requestKey: null,
         });
@@ -217,7 +217,7 @@ export default function SpeakerSection() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 grid-flow-row-dense"
           >
             {speakers[activeCategory]?.map((speaker, index) => (
               <motion.div
