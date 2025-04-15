@@ -60,7 +60,7 @@ export async function POST(request) {
       from: "Conference <info@wfcces.com>",
       to: data.email,
       subject:
-        "Paper Submission Confirmation - International Conference on Sustainable Tourism & Hospitality Management",
+        "Paper Submission Confirmation - WFCCES",
       html: getUserEmailTemplate(data),
     })
 
@@ -68,7 +68,7 @@ export async function POST(request) {
     await resend.emails.send({
       from: "Conference <info@wfcces.com>",
       to: "info@wfcces.com", // Replace with actual admin email
-      subject: "New Paper Submission - International Conference on Sustainable Tourism & Hospitality Management",
+      subject: "New Paper Submission - WFCCES",
       html: getAdminEmailTemplate(data, fileUrl),
     })
 
