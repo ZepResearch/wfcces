@@ -1,3 +1,4 @@
+import { ReserveButton } from "@/components/reserve-button";
 import AboutSection from "./(Home Page)/About";
 import CoOrganizationLogos from "./(Home Page)/Co-OrganiztionLogo";
 import ConferenceCTASections from "./(Home Page)/CTA";
@@ -28,7 +29,7 @@ export default function Home() {
       <VenueCTA/>
       <Testomonial/>
       <FAQ/>
-
+      <ReserveButton />
     </div>
   );
 }
