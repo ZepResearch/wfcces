@@ -7,6 +7,7 @@ import { ArrowRight, CalculatorIcon, Calendar, Headphones, LocateIcon, MapPin, M
 import Image from "next/image";
 import Link from "next/link";
 import Banner from "./Banner";
+import { ReserveButton } from "@/components/reserve-button";
 
 export default function Component() {
   return (
@@ -64,9 +65,19 @@ export default function Component() {
             </p>
             <MountainSnow className="h-8 w-8 text-blue-200 sm:h-12 sm:w-12" />
           </motion.div>
+          <div className="flex flex-row items-center justify-start gap-12 mt-4 sm:gap-8">
+
           <div className="mt-6 font-medium text-lg ">
           <h1><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><MapPin className="h-5 w-5 text-blue-700"/> Venue</span>: Kuala Lumpur, Malaysia</h1>
           <p><span className="font-bold underline underline-offset-2 decoration-blue-400 inline-flex gap-2"><Calendar className="h-5 w-5 text-blue-700"/> Date</span>: May 22nd - 23rd, 2025</p>
+          </div>
+
+          <div className="ml-56">
+
+          <ReserveButton/>
+          </div>
+
+
           </div>
         </div>
 

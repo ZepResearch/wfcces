@@ -10,9 +10,7 @@ import { useToast } from "@/hooks/use-toast"
 import "react-phone-number-input/style.css"
 import PhoneInput from "react-phone-number-input"
 
-
-
-export function ReserveForm({ isOpen, onClose }) {
+export function ReserveForm({ isOpen, onClose, onSubmitSuccess }) {
   const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
@@ -48,12 +46,6 @@ export function ReserveForm({ isOpen, onClose }) {
       const result = await response.json()
 
       if (response.ok) {
-        toast({
-          title: "Reservation Successful!",
-          description: "You've successfully reserved your seat. Check your email for confirmation.",
-          variant: "default",
-        })
-        onClose()
         setFormData({
           name: "",
           email: "",
@@ -61,6 +53,7 @@ export function ReserveForm({ isOpen, onClose }) {
           country: "",
           organization: "",
         })
+        onSubmitSuccess() // Call this instead of onClose directly
       } else {
         throw new Error(result.error || "Something went wrong")
       }

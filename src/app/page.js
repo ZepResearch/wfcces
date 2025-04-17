@@ -29,7 +29,7 @@ export default function Home() {
       <VenueCTA/>
       <Testomonial/>
       <FAQ/>
-      <ReserveButton />
+      {/* <ReserveButton /> */}
     </div>
   );
 }

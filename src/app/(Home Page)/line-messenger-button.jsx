@@ -25,7 +25,7 @@ export function LineMessengerButton({
 
   const positionClasses = {
     "bottom-left": "left-4 bottom-4",
-    "bottom-right": "right-4 bottom-4",
+    "bottom-right": "right-4 bottom-4 ",
   }
 
   return (
