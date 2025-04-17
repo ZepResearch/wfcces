@@ -41,7 +41,7 @@ export function ReserveButton() {
         >
             <AuroraButton>
 
-          Reserve Your Seat
+            Reserve your slot
             </AuroraButton>
         </motion.button>
       </motion.div>
