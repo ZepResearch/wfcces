@@ -157,7 +157,7 @@ const MobileNav = () => (
         </div>
         <div className="mt-4 flex justify-center flex-col items-center">
           <Button size="icon" className="rounded-full bg-green-500 hover:bg-green-600 h-12 w-12">
-            <Link href="https://wa.me/9237388328" target="_blank" rel="noopener noreferrer">
+            <Link href="https://wa.me/919237388326" target="_blank" rel="noopener noreferrer">
               <img src="/whatsapp.png" className="h-10 w-10 text-white" />
             </Link>
           </Button>
@@ -316,7 +316,7 @@ export default function Navbar() {
         <MobileNav />
         <div className="fixed right-4 top-2 z-50 hidden md:flex flex-col items-center">
           <Button size="icon" className="rounded-full bg-green-500 hover:bg-green-600 h-12 w-12 shadow-lg">
-            <Link href="https://wa.me/9237388328" target="_blank" rel="noopener noreferrer">
+            <Link href="https://wa.me/919237388326" target="_blank" rel="noopener noreferrer">
               <img src="/whatsapp.png" className="h-10 w-10 text-white" />
               <span className="sr-only">Contact via WhatsApp</span>
             </Link>
