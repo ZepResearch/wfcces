@@ -75,10 +75,10 @@ export default function RootLayout({ children }) {
         {children}
       <Footer/>
       <ToastProvider/>
-      {/* <TawkToChat/> */}
+      <TawkToChat/>
       <LineMessengerButton/>
        {/* <FloatingWhatsAppButton phoneNumber="8260080050" message="How can we assist you?"/> */}
-       <Script
+       {/* <Script
           id="chatbot-script"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -94,7 +94,7 @@ export default function RootLayout({ children }) {
         />
         <noscript>
           You need to <a href="https://www.chatbot.com/help/chat-widget/enable-javascript-in-your-browser/" rel="noopener nofollow">enable JavaScript</a> in order to use the AI chatbot tool powered by <a href="https://www.chatbot.com/" rel="noopener nofollow" target="_blank">ChatBot</a>
-        </noscript>
+        </noscript> */}
       </body>
     </html>
   );
