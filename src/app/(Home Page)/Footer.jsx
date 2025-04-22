@@ -108,7 +108,7 @@ export default function Footer() {
                   href="tel:+918260080050"
                   className="text-blue-100 dark:text-blue-200 hover:text-blue-300 transition-colors"
                 >
-                  +91 92373 88326
+                 +91 78488 54815
                 </a>
               </div>
               <div className="flex items-center space-x-2">
