@@ -28,7 +28,7 @@ export default function robots() {
         '/api/*',  // Protect API routes
         '/admin/*', // Protect admin routes if any
         '/*.json$', // Prevent access to JSON files
-        '/*.xml$'   // Prevent direct XML access
+          // Prevent direct XML access
       ]
     },
     sitemap: 'https://www.wfcces.com/sitemap.xml',
