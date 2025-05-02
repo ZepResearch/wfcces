@@ -95,7 +95,7 @@ const DynamicTimeline = () => {
                 }`}
               >
                 <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-y-0">
-                  <div className="w-8 h-8 rounded-full bg-blue-400 flex items-center justify-center">
+                  <div className={`w-8 h-8 rounded-full ${index === timelineData.length - 4 ? "bg-gray-400" : "bg-blue-400"} flex items-center justify-center`}>
                     <item.icon className="w-4 h-4 text-white" />
                   </div>
                 </div>
@@ -104,15 +104,15 @@ const DynamicTimeline = () => {
                     index % 2 === 1 ? "md:pr-8" : "md:pl-8"
                   }`}
                 >
-                  <Card>
+                  <Card className={index === timelineData.length - 4 ? "opacity-75" : ""}>
                     <CardContent className="p-4">
-                      <h3 className="text-lg font-semibold text-gray-800">
+                      <h3 className={`text-lg font-semibold text-gray-800 ${index === timelineData.length - 4 ? "line-through" : ""}`}>
                         {item.name}
                       </h3>
-                      <p className="text-sm text-gray-600 mt-1">
+                      <p className={`text-sm text-gray-600 mt-1 ${index === timelineData.length - 4 ? "line-through" : ""}`}>
                         {item.description}
                       </p>
-                      <time className="text-sm font-medium text-primary mt-2 block">
+                      <time className={`text-sm font-medium mt-2 block ${index === timelineData.length - 4 ? "line-through text-gray-500" : "text-primary"}`}>
                         {item.date}
                       </time>
                     </CardContent>
