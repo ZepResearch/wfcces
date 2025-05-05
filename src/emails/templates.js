@@ -224,9 +224,9 @@ export const userConfirmationTemplate = (data) => `
             <p>© ${new Date().getFullYear()} World Forum on Climate Change and Environmental Sustainability</p>
             <p>This is an automated confirmation. Please do not reply to this email.</p>
             <div class="social-links">
-                <a href="#">Website</a> |
-                <a href="#">LinkedIn</a> |
-                <a href="#">Twitter</a>
+                 <a href="https://www.zepresearch.com/">Website</a> |
+                <a href="https://www.linkedin.com/company/zep-research/posts/?feedView=all">LinkedIn</a> |
+                <a href="https://x.com/Zepresearch">Twitter</a>
             </div>
         </div>
     </div>
