@@ -6,6 +6,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Download, FileText, Image, FileCode, Upload } from 'lucide-react';
+import Link from "next/link";
 
 export default function SubmissionGuidelines() {
   const controls = useAnimation();
@@ -49,7 +50,7 @@ export default function SubmissionGuidelines() {
         "Include: Research objectives, Methodology, Key results, Conclusions",
         "Use clear, concise language, avoiding jargon or acronyms",
       ],
-      downloadLink: "/path-to-abstract-template.docx",
+      downloadLink: "/templates/Abstract_Template.docx",
     },
     {
       title: "Full Paper Format",
@@ -60,7 +61,7 @@ export default function SubmissionGuidelines() {
         "Sections: Title, Abstract, Keywords, Introduction, Methodology, Results, Discussion, Conclusion, References",
         "Follow APA 7th edition for citations and references",
       ],
-      downloadLink: "/path-to-full-paper-template.docx",
+      downloadLink: "/templates/Fullpaper_Template.doc",
     },
     {
       title: "Poster Format",
@@ -71,7 +72,7 @@ export default function SubmissionGuidelines() {
         "Sections: Title, Authors and Affiliation, Introduction, Methods, Results, Conclusions, Key References",
         "Use graphics, charts, and images to enhance understanding and presentation",
       ],
-      downloadLink: "/path-to-poster-template.pptx",
+      downloadLink: "/templates/poster.jpg",
     },
   ];
 
@@ -117,13 +118,15 @@ export default function SubmissionGuidelines() {
                       <li key={i} className="mb-2">{item}</li>
                     ))}
                   </ul>
+                  <Link href={section.downloadLink} download>
                   <Button
                     className="w-full sm:w-auto border-2 border-primary py-5 font-bold"
                     variant="secondary"
-                  >
+                    >
                     <Download className="mr-2 h-4 w-4 text-primary" />
                     Download {section.title} Template
                   </Button>
+                    </Link>
                 </CardContent>
               </Card>
             </motion.div>
@@ -144,6 +147,7 @@ export default function SubmissionGuidelines() {
                 <li className="mb-2">Peer Review: Submissions will undergo a peer review process for evaluation.</li>
                 <li className="mb-2">Final Submission: Once accepted, submit the final version of your paper for publication.</li>
               </ol>
+              <Link href="/submission" target="_blank">
               <Button
                 className="w-full sm:w-auto border-2 border-primary py-5 font-bold"
                 variant="secondary"
@@ -151,6 +155,7 @@ export default function SubmissionGuidelines() {
                 <Upload className="mr-2 h-4 w-4 text-primary" />
                 Go to Submission Portal
               </Button>
+              </Link>
             </CardContent>
           </Card>
         </motion.div>

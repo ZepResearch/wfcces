@@ -122,6 +122,20 @@ export const userConfirmationTemplate = (data) => `
             margin: 0 0 10px;
             font-size: 18px;
         }
+        .cta-button {
+            display: inline-block;
+            background-color: #10b981;
+            color: white;
+            font-weight: 500;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #0d9488;
+        }
         .footer {
             background-color: #f0f8ff;
             color: #666;
@@ -169,14 +183,14 @@ export const userConfirmationTemplate = (data) => `
 <body>
     <div class="container">
         <div class="header">
-            <h1>Reservation Confirmed!</h1>
+            <h1>Slot Reserved!</h1>
             <p>World Forum on Climate Change and Environmental Sustainability</p>
         </div>
         <div class="content">
             <p class="greeting">Dear ${data.name},</p>
-            <div class="success-badge">✓ Seat Successfully Reserved</div>
+            <div class="success-badge">✓ Slot Successfully Reserved</div>
             
-            <p>We're thrilled to confirm your seat reservation for the World Forum on Climate Change and Environmental Sustainability. Your participation will contribute to meaningful discussions on our planet's future.</p>
+            <p>We're thrilled to confirm your slot reservation for the World Forum on Climate Change and Environmental Sustainability. Your participation will contribute to meaningful discussions on our planet's future.</p>
             
             <div class="registration-details">
                 <h2>Your Registration Details</h2>
@@ -209,8 +223,9 @@ export const userConfirmationTemplate = (data) => `
             </div>
             
             <div class="highlight-box">
-                <h3>What's Next?</h3>
-                <p>We'll send you detailed event information, including the schedule and venue specifics, as we approach the conference date.</p>
+                <h3>Important Next Step</h3>
+                <p><strong>Slot Reserved. Buy Conference ticket to avail the free accommodation.</strong></p>
+                <a href="https://www.wfcces.com/registration" class="cta-button">Click here to buy Conference ticket</a>
             </div>
             
             <p>If you have any questions, please don't hesitate to reach out to our team.</p>
