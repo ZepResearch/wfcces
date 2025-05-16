@@ -1,7 +1,7 @@
-import {  NextResponse } from "next/server"
+import { NextResponse } from "next/server"
 import PocketBase from "pocketbase"
 import { resend } from "@/lib/resend"
-import { getUserEmailTemplate, getAdminEmailTemplate} from "@/emails/email-templates"
+import { getUserEmailTemplate, getAdminEmailTemplate } from "@/emails/email-templates"
 
 export async function POST(request) {
   try {
@@ -12,8 +12,7 @@ export async function POST(request) {
 
     // Extract file if present
     const file = formData.get("file") 
-    let fileUrl = ""
-
+    
     // Create data object for PocketBase
     const data = {
       author: formData.get("author"),
@@ -30,12 +29,14 @@ export async function POST(request) {
       know_to_you: formData.get("know_to_you"),
     }
 
-    // Create a new FormData for PocketBase (needed for file upload)
+    // Create a new FormData for PocketBase
     const pbFormData = new FormData()
 
     // Add all fields to PocketBase FormData
     Object.entries(data).forEach(([key, value]) => {
-      pbFormData.append(key, value )
+      if (value !== null && value !== undefined) {
+        pbFormData.append(key, value)
+      }
     })
 
     // Add file if present
@@ -47,30 +48,43 @@ export async function POST(request) {
     const record = await pb.collection("paper_form_submission").create(pbFormData)
 
     // Get file URL if a file was uploaded
-    if (record.file && record.file.length > 0) {
-        // Use the URL method as per latest documentation
-        fileUrl = pb.files.getURL(record, record.file),{'download': 1};
-        
-        // If you need to add download parameter
-        // fileUrl = pb.files.getURL(record, record.file[0], {'download': 1});
+    let fileUrl = ""
+    if (record.file) {
+      // Handle file URL based on whether it's a string or array
+      if (typeof record.file === 'string') {
+        fileUrl = pb.files.getUrl(record, record.file)
+      } else if (Array.isArray(record.file) && record.file.length > 0) {
+        fileUrl = pb.files.getUrl(record, record.file[0])
       }
+    }
 
     // Send confirmation email to user
-    await resend.emails.send({
-      from: "Conference <info@wfcces.com>",
-      to: data.email,
-      subject:
-        "Paper Submission Confirmation - WFCCES",
-      html: getUserEmailTemplate(data),
-    })
+    if (data.email) {
+      try {
+        await resend.emails.send({
+          from: "Conference <info@wfcces.com>",
+          to: data.email,
+          subject: "Paper Submission Confirmation - WFCCES",
+          html: getUserEmailTemplate(data),
+        })
+      } catch (emailError) {
+        console.error("Error sending user confirmation email:", emailError)
+        // Continue execution even if email fails
+      }
+    }
 
     // Send notification email to admin
-    await resend.emails.send({
-      from: "Conference <info@wfcces.com>",
-      to: "info@wfcces.com", // Replace with actual admin email
-      subject: "New Paper Submission - WFCCES",
-      html: getAdminEmailTemplate(data, fileUrl),
-    })
+    try {
+      await resend.emails.send({
+        from: "Conference <info@wfcces.com>",
+        to: "info@wfcces.com", // Replace with actual admin email
+        subject: "New Paper Submission - WFCCES",
+        html: getAdminEmailTemplate(data, fileUrl),
+      })
+    } catch (emailError) {
+      console.error("Error sending admin notification email:", emailError)
+      // Continue execution even if email fails
+    }
 
     return NextResponse.json({
       success: true,
@@ -78,7 +92,11 @@ export async function POST(request) {
     })
   } catch (error) {
     console.error("Error submitting paper:", error)
-    return NextResponse.json({ success: false, message: "Failed to submit paper" }, { status: 500 })
+    // Return detailed error info for debugging
+    return NextResponse.json({ 
+      success: false, 
+      message: "Failed to submit paper", 
+      error: error.message || String(error)
+    }, { status: 500 })
   }
 }
-
