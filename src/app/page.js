@@ -11,11 +11,13 @@ import SDGSection from "./(Home Page)/SDGS";
 import SpeakersView from "./(Home Page)/Speakers";
 import Testomonial from "./(Home Page)/Testomonial";
 import VenueCTA from "./(Home Page)/VebueCTA";
+import { DownloadPopup } from "@/components/download-popup";
 
 export default function Home() {
   return (
     <div>     
       <Hero/>
+      <DownloadPopup/>
       <CoOrganizationLogos/>
       <AboutSection/>
       <DownloadButtons/>
