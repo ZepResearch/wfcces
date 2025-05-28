@@ -28,7 +28,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import Image from "next/image";
-import { Menu, Info, FileText, Globe, Users, Award, Phone, Mic, PersonStanding } from "lucide-react";
+import { Menu, Info, FileText, Globe, Users, Award, Phone, Mic, PersonStanding, GalleryHorizontal } from "lucide-react";
 
 const ListItem = React.forwardRef(
   ({ className, title, children, ...props }, ref) => {
@@ -134,6 +134,9 @@ const MobileNav = () => (
           </MobileNavItem>
           <MobileNavItem href="/submission" icon={Globe}>
             SUBMISSION
+          </MobileNavItem>
+          <MobileNavItem href="/gallery" icon={Globe}>
+            GALLERY
           </MobileNavItem>
           <MobileNavItem href="/venue" icon={Users}>
             VENUE
@@ -285,6 +288,14 @@ export default function Navbar() {
                   <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                     <Globe className="mr-2 h-4 w-4 inline" />
                     SUBMISSION
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/gallery" legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    <GalleryHorizontal className="mr-2 h-4 w-4 inline" />
+                    GALLERY
                   </NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
