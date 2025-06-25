@@ -74,7 +74,7 @@ export function ReserveForm({ isOpen, onClose, onSubmitSuccess }) {
         <DialogHeader>
     
         <DialogTitle className="font-bold text-center bg-gradient-to-r from-blue-600 to-cyan-400 text-white py-4 px-3 rounded-md shadow-lg border-2 border-blue-200  mt-2">
-  Reserve Your Seat within 15<sup>th</sup> May and <br />Get free Accommodation
+  Pre-book your slot !
 </DialogTitle>
           <DialogDescription className='text-center'>World Forum on Climate Change and Environmental Sustainability</DialogDescription>
         </DialogHeader>
