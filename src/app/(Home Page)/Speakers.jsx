@@ -65,7 +65,7 @@ const EmptyState = () => (
         Speaker will declare soon
       </h3>
       <p className="text-blue-600 max-w-sm mx-auto">
-        We're working on finalizing our amazing lineup of speakers for this category. Stay tuned for updates!
+        Were working on finalizing our amazing lineup of speakers for this category. Stay tuned for updates!
       </p>
     </div>
   </motion.div>
