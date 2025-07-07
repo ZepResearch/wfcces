@@ -8,7 +8,7 @@ export async function POST(request) {
     const formData = await request.formData()
 
     // Initialize PocketBase
-    const pb = new PocketBase("https://wfcces.pockethost.io")
+    const pb = new PocketBase("https://icsthm-wfcces.pockethost.io")
 
     // Extract file if present
     const file = formData.get("file") 
@@ -45,7 +45,7 @@ export async function POST(request) {
     }
 
     // Submit to PocketBase
-    const record = await pb.collection("paper_form_submission").create(pbFormData)
+    const record = await pb.collection("WFCCES_paper_form_submission").create(pbFormData)
 
     // Get file URL if a file was uploaded
     let fileUrl = ""

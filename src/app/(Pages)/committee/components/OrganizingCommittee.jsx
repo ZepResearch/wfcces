@@ -15,7 +15,7 @@ export default function OrganizingCommittee() {
   useEffect(() => {
       const fetchCommittee = async () => {
         try {
-          const records = await pb.collection('committee').getFullList({
+          const records = await pb.collection('WFCCES_committee').getFullList({
             sort: 'name',
             requestKey: null
           })
@@ -81,7 +81,7 @@ export default function OrganizingCommittee() {
               <Card className="bg-card">
                 <CardContent className="pt-6">
                   <Avatar className="mx-auto h-56 w-56">
-                    <AvatarImage src={`https://wfcces.pockethost.io/api/files/${speaker.collectionId}/${speaker.id}/${speaker.img}`} alt={speaker.name} className='object-contain bg-blue-50'/>
+                    <AvatarImage src={`${process.env.NEXT_PUBLIC_POCKETBASE_URL}/api/files/${speaker.collectionId}/${speaker.id}/${speaker.img}`} alt={speaker.name} className='object-contain bg-blue-50'/>
                     <AvatarFallback>
                       {speaker.name
                         .split(" ")

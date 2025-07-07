@@ -7,8 +7,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { DownloadCloudIcon } from "lucide-react";
 import PocketBase from 'pocketbase';
+import { pb } from "@/lib/pocketbase";
 
-const pb = new PocketBase('https://wfcces.pockethost.io');
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -43,7 +43,7 @@ export default function DownloadButtons() {
     const fetchButtons = async () => {
       try {
         // Fetch all records from the 'button' collection
-        const records = await pb.collection('button').getFullList({
+        const records = await pb.collection('WFCCES_downloads').getFullList({
           sort: 'created', // You can adjust the sorting as needed
           requestKey:null
         });
@@ -93,14 +93,14 @@ export default function DownloadButtons() {
         >
           {buttons.map((button) => (
             <motion.a
-            href={`https://wfcces.pockethost.io/api/files/${button.collectionId}/${button.id}/${button.file}`}
+            href={`${process.env.NEXT_PUBLIC_POCKETBASE_URL}/api/files/${button.collectionId}/${button.id}/${button.url}`}
               key={button.id}
               className="bg-blue-400 hover:bg-blue-500/80 text-white font-bold py-3 px-6 rounded-lg shadow-md transition-colors duration-300 text-sm sm:text-sm text-center drop-shadow-sm"
               variants={itemVariants}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {button.title} {/* Assuming your PocketBase record has a 'text' field */}
+              {button.name} {/* Assuming your PocketBase record has a 'text' field */}
             </motion.a>
           ))}
         </motion.div>

@@ -3,7 +3,7 @@ import PocketBase from 'pocketbase';
 // Create PocketBase instance only on client side
 const getPocketBase = () => {
   if (typeof window === "undefined") return null;
-  return new PocketBase('https://wfcces.pockethost.io');
+  return new PocketBase('https://icsthm-wfcces.pockethost.io');
 };
 
 export const pb = getPocketBase();

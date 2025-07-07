@@ -3,17 +3,9 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Calendar, Clock, Zap, Users } from "lucide-react";
 import PocketBase from 'pocketbase';
+import { pb } from "@/lib/pocketbase";
 
-// Icon mapping for different event types
-const iconMapping = {
-  'early-bird': Calendar,
-  'abstract': Clock,
-  'full-paper': Zap,
-  'registration': Users,
-  'default': Calendar
-};
 
 const DynamicTimeline = () => {
   const [timelineData, setTimelineData] = useState([]);
@@ -23,23 +15,13 @@ const DynamicTimeline = () => {
   useEffect(() => {
     const fetchTimelineData = async () => {
       try {
-        const pb = new PocketBase('https://wfcces.pockethost.io');
-        const records = await pb.collection('dates').getFullList({
+        
+        const records = await pb.collection('WFCCES_dates').getFullList({
           sort: 'created',
           requestKey: null
         });
 
         // Transform the records to match our timeline format
-        const formattedData = records.map(record => ({
-          name: record.name,
-          description: record.description,
-          date: new Date(record.date).toLocaleDateString('en-US', {
-            month: 'long',
-            day: 'numeric',
-            year: 'numeric'
-          }),
-          icon: iconMapping[record.type] || iconMapping.default
-        })).reverse();
 
         setTimelineData(records);
         setLoading(false);
@@ -96,7 +78,6 @@ const DynamicTimeline = () => {
               >
                 <div className="absolute left-4 md:left-1/2 transform -translate-x-1/2 -translate-y-1/2 md:translate-y-0">
                   <div className={`w-8 h-8 rounded-full ${index === timelineData.length - 4 ? "bg-gray-400" : "bg-blue-400"} flex items-center justify-center`}>
-                    <item.icon className="w-4 h-4 text-white" />
                   </div>
                 </div>
                 <div

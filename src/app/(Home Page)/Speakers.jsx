@@ -1,16 +1,15 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import PocketBase from 'pocketbase';
+import { pb } from "@/lib/pocketbase";
 
-const pb = new PocketBase('https://wfcces.pockethost.io');
 
 // Updated to match exact PocketBase select field choices
 const speakerCategories = [
-  // { id: "Guest Speaker", title: "Guest Speaker" },
+  { id: "Guest Speaker", title: "Guest Speaker" },
   { id: "Keynote Speaker", title: "Keynote Speaker" },
-  // { id: "Conference Chair", title: "Conference Chair" },
-  // { id: "Conference Co-Chair", title: "Conference Co-Chair" },
+  { id: "Conference Chair", title: "Conference Chair" },
+  { id: "Conference Co-Chair", title: "Conference Co-Chair" },
   { id: "Session Chair", title: "Session Chair" },
 ];
 
@@ -20,7 +19,7 @@ const SpeakerCard = ({ name, role, image, bio,collectionId, id, country, college
     whileHover={{ y: -5 }}
   >
     <img 
-      src={ `https://wfcces.pockethost.io/api/files/${collectionId}/${id}/${image}` } 
+      src={ `${process.env.NEXT_PUBLIC_POCKETBASE_URL}/api/files/${collectionId}/${id}/${image}` } 
       alt={name} 
       className="w-full h-72 object-contain" 
     />
@@ -35,6 +34,39 @@ const SpeakerCard = ({ name, role, image, bio,collectionId, id, country, college
       >
         More info
       </button>
+    </div>
+  </motion.div>
+);
+
+const EmptyState = () => (
+  <motion.div
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.5 }}
+    className="col-span-full flex flex-col items-center justify-center py-16"
+  >
+    <div className="text-center">
+      <div className="mb-6">
+        <svg
+          className="mx-auto h-16 w-16 text-blue-300"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={1}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+          />
+        </svg>
+      </div>
+      <h3 className="text-2xl font-semibold text-blue-800 mb-2">
+        Speaker will declare soon
+      </h3>
+      <p className="text-blue-600 max-w-sm mx-auto">
+        We're working on finalizing our amazing lineup of speakers for this category. Stay tuned for updates!
+      </p>
     </div>
   </motion.div>
 );
@@ -81,7 +113,7 @@ const Drawer = ({ isOpen, onClose, speaker }) => (
             </button>
            
             <img
-              src={`https://wfcces.pockethost.io/api/files/${speaker.collectionId}/${speaker.id}/${speaker.image}` }
+              src={`${process.env.NEXT_PUBLIC_POCKETBASE_URL}/api/files/${speaker.collectionId}/${speaker.id}/${speaker.image}` }
               alt={speaker.name}
               className="w-full  h-96  object-contain rounded-2xl mb-4 mt-4"
             />
@@ -119,7 +151,7 @@ export default function SpeakerSection() {
       try {
         setLoading(true);
         // Fetch all speakers
-        const records = await pb.collection('speakers').getFullList({
+        const records = await pb.collection('WFCCES_speakers').getFullList({
           sort: '-order',
           expand: 'image', // Expand the image relation if needed
           requestKey: null,
@@ -219,16 +251,20 @@ export default function SpeakerSection() {
             transition={{ duration: 0.3 }}
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 grid-flow-row-dense"
           >
-            {speakers[activeCategory]?.map((speaker, index) => (
-              <motion.div
-                key={speaker.id}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: index * 0.1 }}
-              >
-                <SpeakerCard {...speaker} onMoreInfo={handleMoreInfo} />
-              </motion.div>
-            ))}
+            {speakers[activeCategory]?.length > 0 ? (
+              speakers[activeCategory].map((speaker, index) => (
+                <motion.div
+                  key={speaker.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: index * 0.1 }}
+                >
+                  <SpeakerCard {...speaker} onMoreInfo={handleMoreInfo} />
+                </motion.div>
+              ))
+            ) : (
+              <EmptyState />
+            )}
           </motion.div>
         </AnimatePresence>
         <Drawer
